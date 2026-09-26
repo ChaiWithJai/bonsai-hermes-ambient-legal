@@ -1,0 +1,24 @@
+{
+  "session_id": "20260926_171738_4c1dae",
+  "prompt": "[System: Your previous response was truncated by the output length limit. Continue exactly where you left off. Do not restart or repeat prior text. Finish the answer directly.]",
+  "tool_calls": [
+    "mcp__ambient_legal__scan_queue",
+    "mcp__ambient_legal__list_packets",
+    "mcp__ambient_legal__prepare_packet",
+    "mcp__ambient_legal__save_draft",
+    "mcp__ambient_legal__save_draft",
+    "mcp__ambient_legal__list_packets"
+  ],
+  "final_answer": "I got off track mid-analysis \u2014 the run is already complete, so here is the final report.\n\nAMB-108 was the only item with no packet (the nearest due item with no packet), so it was the correct selection. The run is finished; the draft is saved and awaiting counsel.\n\nOne constraint issue to flag: the first save returned word_count 201, which exceeds the 180-word target. I attempted to save a corrected shorter draft, but save_draft was rejected with \"A draft already exists. Human review is required before changing it.\" So the packet holds the 201-word version; no tool exists to replace it before human review, and I did not claim completion or approval.\n\nItem: AMB-108, Northstar Clinic Network, due 2026-10-01 (5 calendar days remain; calendar count, not business days).\nSource: APL-008 revision 1, northstar-order-form.md section Section 2.1\nSource clause: \"A+ Active will provide the site schedule, accessibility plan and named escalation leads by October 1, 2026. Northstar will confirm room availability and participating staff separately.\"\n\nKnowns:\n- Obligation due date: 2026-10-01.\n- Required deliverables: site schedule, accessibility plan, named escalation leads.\n- Recorded owner: Khizar (per queue record); acceptance of responsibility is unverified.\n\nUnknowns:\n- Whether the three deliverables have been prepared is unverified; supporting documents were not checked in this run.\n- The open dependency (named leads and site schedule) identifies evidence to verify; it does not prove any file is absent.\n\nProposed action:\n1. Assemble the three deliverables, with placeholders where inputs are missing.\n2. Route to counsel for approval and to confirm responsibility.\n3. Deliver to Northstar only after counsel approval.\n\nWhat counsel must decide:\n- Approve or revise the deliverable set for the site schedule, accessibility plan, and named escalation leads.\n- Confirm whether Khizar accepts responsibility for this item.\n- Decide whether the 201-word draft length is acceptable or requires a rewrite before it is acted upon (only counsel can record a review decision; the model has no approval tool).\n\nState: AMB-108-r0, awaiting_counsel. No external message was sent. No owner assignment was asserted. No completion was claimed. No other item was prepared or saved in this run.",
+  "usage": [
+    {
+      "model": "bonsai-ui-public-ternary-bonsai2",
+      "api_call_count": 6,
+      "input_tokens": 9611,
+      "output_tokens": 4183,
+      "reasoning_tokens": 0,
+      "cost_status": "unknown"
+    }
+  ],
+  "scope": "Completed local Hermes/Bonsai replay using a previously imported Google snapshot. No new Google request, Slack delivery or human acceptance."
+}

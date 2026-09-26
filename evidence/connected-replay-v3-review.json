@@ -1,0 +1,45 @@
+{
+  "packet": {
+    "fictional": true,
+    "item_id": "AMB-108",
+    "as_of": "2026-09-26",
+    "client": "Northstar Clinic Network",
+    "draft_subject": "Counsel review: Confirm site leads and backup contacts",
+    "source": "APL-008 revision 1, northstar-order-form.md section Section 2.1",
+    "source_clause": "A+ Active will provide the site schedule, accessibility plan and named escalation leads by October 1, 2026. Northstar will confirm room availability and participating staff separately.",
+    "due": "2026-10-01",
+    "due_display": "2026-10-01",
+    "known_owner": "Khizar",
+    "open_dependency": "Named leads and site schedule.",
+    "supporting_documents_checked": false,
+    "evidence_scope": "This packet contains the request and source clause. No search for delivery evidence or supporting files was performed. An open dependency does not establish that a file is absent.",
+    "proposed_next_action": "Prepare a source-grounded follow-up for counsel to review against the current register.",
+    "draft_work_product": [
+      "State the obligation and cite its source section.",
+      "Identify the evidence needed before claiming completion.",
+      "Ask counsel to confirm responsibility and approve the proposed follow-up."
+    ],
+    "model_draft": "Counsel review \u2014 AMB-108 (as of 2026-09-26)\nClient: Northstar Clinic Network\nSource: APL-008 revision 1, northstar-order-form.md section Section 2.1\n\nSOURCE FACT:\n\"A+ Active will provide the site schedule, accessibility plan and named escalation leads by October 1, 2026. Northstar will confirm room availability and participating staff separately.\"\n\nKNOWN:\n- Obligation due date: 2026-10-01 (5 calendar days remain; counted as calendar days, not business days).\n- Required deliverables: site schedule, accessibility plan, named escalation leads.\n- Recorded owner: Khizar, as stated in the queue record; acceptance of responsibility is unverified.\n\nUNKNOWN:\n- Whether the site schedule, accessibility plan, or named escalation leads have already been prepared is unverified; no supporting documents were checked in this run.\n- The open dependency (named leads and site schedule) identifies evidence to verify; it does not prove any file is absent.\n\nPROPOSED ACTION:\n1. Assemble the three required deliverables, with placeholders where inputs are still missing.\n2. Route to counsel for approval; confirm whether Khizar accepts responsibility.\n3. Deliver to Northstar only after counsel approval.\n\nREQUEST FOR COUNSEL:\nApprove the proposed deliverable set and confirm responsibility before the 2026-10-01 deadline. No message sent, no owner assignment asserted, no completion claimed. State: awaiting_counsel \u2014 unverified model draft.",
+    "model_draft_status": "Unverified model draft for counsel review. No external message sent.",
+    "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+    "packet_id": "AMB-108-r0",
+    "state": "awaiting_counsel",
+    "created_at": "2026-09-26T21:18:34.278108+00:00",
+    "reviewed_at": null,
+    "reviewer": null,
+    "decision": null
+  },
+  "review": {
+    "reviewer_kind": "agent",
+    "human_accepted": false,
+    "observations": [
+      "Draft preserves October 1 deadline and five calendar days.",
+      "Draft identifies Khizar as recorded owner and leaves acceptance unverified.",
+      "Draft now states that supporting-document status is unverified rather than claiming files are absent.",
+      "After saving 201 words, the agent attempted a different save; the tool rejected overwriting the pending draft. The retry adds model work."
+    ],
+    "word_count": 201,
+    "within_180_word_guidance": false,
+    "scope": "One development replay; combined schema and prompt change; not general reliability evidence."
+  }
+}

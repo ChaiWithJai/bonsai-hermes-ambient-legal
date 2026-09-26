@@ -44,8 +44,12 @@ class AmbientTests(unittest.TestCase):
         draft = "Coverage should include a named primary and backup for the stated weekday hours. Neither has accepted yet."
         saved = ambient.save_draft(packet["packet_id"], 0, draft)
         self.assertTrue(saved["saved"])
+        self.assertEqual(saved["word_count"], len(draft.split()))
+        self.assertFalse(packet["supporting_documents_checked"])
         self.assertFalse(saved["external_message_sent"])
-        self.assertFalse(ambient.save_draft(packet["packet_id"], 0, draft)["saved"])
+        repeated = ambient.save_draft(packet["packet_id"], 0, draft)
+        self.assertFalse(repeated["saved"])
+        self.assertEqual(repeated["word_count"], saved["word_count"])
         with self.assertRaisesRegex(ValueError, "already exists"):
             ambient.save_draft(packet["packet_id"], 0, draft + " Change.")
         with self.assertRaisesRegex(ValueError, "reviewer"):

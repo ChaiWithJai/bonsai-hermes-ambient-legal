@@ -105,6 +105,8 @@ def make_packet(item: dict, as_of: str) -> dict:
         "due_display": due_text,
         "known_owner": item["owner"],
         "open_dependency": item["dependency"],
+        "supporting_documents_checked": False,
+        "evidence_scope": "This packet contains the request and source clause. No search for delivery evidence or supporting files was performed. An open dependency does not establish that a file is absent.",
         "proposed_next_action": item["next_action"],
         "draft_work_product": item["draft_outline"],
         "model_draft": None,
@@ -175,14 +177,14 @@ def save_draft(packet_id: str, expected_item_revision: int, draft: str) -> dict:
             if body["model_draft"]:
                 if body["model_draft"] == draft.strip():
                     conn.commit()
-                    return {"packet_id": packet_id, "saved": False, "state": row["state"], "model_draft": body["model_draft"]}
+                    return {"packet_id": packet_id, "saved": False, "state": row["state"], "model_draft": body["model_draft"], "word_count": len(body["model_draft"].split())}
                 raise ValueError("A draft already exists. Human review is required before changing it.")
             body["model_draft"] = draft.strip()
             body["model_draft_status"] = "Unverified model draft for counsel review. No external message sent."
             conn.execute("UPDATE packets SET body=? WHERE id=?", (json.dumps(body), packet_id))
             conn.execute("INSERT INTO audit(at,action,item_id,packet_id,detail) VALUES (?,?,?,?,?)", (now(), "model_draft_saved", row["item_id"], packet_id, json.dumps({"characters": len(draft.strip())})))
             conn.commit()
-            return {"packet_id": packet_id, "saved": True, "state": row["state"], "model_draft": body["model_draft"], "external_message_sent": False}
+            return {"packet_id": packet_id, "saved": True, "state": row["state"], "model_draft": body["model_draft"], "word_count": len(body["model_draft"].split()), "external_message_sent": False}
         except Exception:
             conn.rollback()
             raise
