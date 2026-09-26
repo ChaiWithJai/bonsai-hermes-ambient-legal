@@ -1,0 +1,10 @@
+{
+  "role": "Post-turn auxiliary title generation",
+  "response_id": "chatcmpl-j4UMNtvo9TYVedLVEeHPklf97pJt40CI",
+  "input_tokens": 344,
+  "output_tokens": 534,
+  "seconds": 23.17538174999936,
+  "capture_sha256": "3c870436f5069f872af42086e90272c0e91552be52e1409d6635a0cf97962aa1",
+  "attribution": "Hermes agent.log records auxiliary title_generation at 17:22:24.491; capture follows the completed turn and has a separate two-message request.",
+  "scope": "Additional inference overhead; not part of the seven-call task turn."
+}

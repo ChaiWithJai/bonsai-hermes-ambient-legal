@@ -1,0 +1,86 @@
+{
+  "calls": [
+    {
+      "call": 1,
+      "response_id": "chatcmpl-044CXlahkKnvxuoszoZNCnRxRcRNUlK2",
+      "input_tokens": 2910,
+      "output_tokens": 213,
+      "cached_input_tokens": 0,
+      "seconds": 19.894874166995578,
+      "finish_reason": "tool_calls",
+      "capture_file": "60325c192fc44d54a7085708f43c73d8.json",
+      "capture_sha256": "8ccccc8e6537fe4f1cbabbe64265c1e6bd7194100891b1f346737f74104a6d14"
+    },
+    {
+      "call": 2,
+      "response_id": "chatcmpl-5oKdIDpSLzsxUfTqTeztpVQEm23lJRdg",
+      "input_tokens": 6575,
+      "output_tokens": 584,
+      "cached_input_tokens": 2906,
+      "seconds": 34.4413614169971,
+      "finish_reason": "tool_calls",
+      "capture_file": "18d9c2c7eab14b16b8c7ffadf786db86.json",
+      "capture_sha256": "abb460745491a5700556ca53e2dc0dfd249dc1314d2c683be38596236fe504af"
+    },
+    {
+      "call": 3,
+      "response_id": "chatcmpl-RdoBdbA9LSurSwBM0ow3lTzpEKLIAaFz",
+      "input_tokens": 7110,
+      "output_tokens": 918,
+      "cached_input_tokens": 6571,
+      "seconds": 39.484856374998344,
+      "finish_reason": "tool_calls",
+      "capture_file": "921a42d288284d959cb2b38c0ae4c060.json",
+      "capture_sha256": "af37fb34d1faa07665ed33aaed57db63464fcd859802000b44c3e765cd6129ca"
+    },
+    {
+      "call": 4,
+      "response_id": "chatcmpl-GH6Ks0QhB1etIU7uIDO28aFOsj21QCdD",
+      "input_tokens": 8038,
+      "output_tokens": 884,
+      "cached_input_tokens": 7106,
+      "seconds": 39.51982383400173,
+      "finish_reason": "tool_calls",
+      "capture_file": "fa58d5af538940289fcd31f4bfba6dfc.json",
+      "capture_sha256": "241151880cf654689516d61ae7f20ac891ef9a54ab596eee46bc8ae61b8cd378"
+    },
+    {
+      "call": 5,
+      "response_id": "chatcmpl-JxPjmFGeQWfWsJcsWcEjp6K4FMIFMCMO",
+      "input_tokens": 8520,
+      "output_tokens": 533,
+      "cached_input_tokens": 8034,
+      "seconds": 23.587588707996474,
+      "finish_reason": "tool_calls",
+      "capture_file": "af813a35cd1b4eeabc2527af81f8d7dc.json",
+      "capture_sha256": "80e676e4d0f8f827ca4b81252bf114f8f77dbe6dbab4694896566ad95cacfc24"
+    },
+    {
+      "call": 6,
+      "response_id": "chatcmpl-Jaibr3Qhb69d5wvr4Sran5B7Zdseb8aZ",
+      "input_tokens": 12157,
+      "output_tokens": 1536,
+      "cached_input_tokens": 8516,
+      "seconds": 78.13752383300016,
+      "finish_reason": "length",
+      "capture_file": "4511c903958f40f3afcaec2d511d4805.json",
+      "capture_sha256": "fd52989be1c2e0e0edcec846a11a8d8419f8fb5f047863f8244d5cd1a6617867"
+    },
+    {
+      "call": 7,
+      "response_id": "chatcmpl-2go5VmvHuwgYs4kSDNYYrnMjk6JwymtW",
+      "input_tokens": 13228,
+      "output_tokens": 1051,
+      "cached_input_tokens": 12153,
+      "seconds": 49.41469308300293,
+      "finish_reason": "stop",
+      "capture_file": "c705b1b02e64453583c924c543279226.json",
+      "capture_sha256": "0c0f69453ec88648cae4a30ec0809c534f534f63310c0fe1e153e08eaa3ecb9a"
+    }
+  ],
+  "total_input_tokens": 58538,
+  "total_output_tokens": 5719,
+  "total_cached_input_tokens": 45286,
+  "sum_request_seconds": 284.4807214169923,
+  "scope": "Selected completed model turn, including truncation continuations. Auxiliary requests, tool time, human review and hosted pricing are separate. Request tokens include repeated and cached context."
+}
