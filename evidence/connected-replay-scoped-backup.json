@@ -1,0 +1,13 @@
+{
+  "gridfs_id": "6ab8351f5dc91aa09f0c3494",
+  "sha256": "02f91508f2673289e17116b59e7fc0de43bfa6f83f7ac6ea8db8f610b2b87757",
+  "files": [
+    "evidence/connected-intake-first-run.json",
+    "evidence/connected-replay-v2-manifest.json",
+    "evidence/connected-replay-v2-review.json",
+    "evidence/connected-replay-v2-mlflow.json",
+    "evidence/connected-packet-checks.json"
+  ],
+  "readback_verified": true,
+  "scope": "Selected artifacts restored and compared byte for byte; not a full MLflow service backup."
+}
