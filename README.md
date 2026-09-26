@@ -2,6 +2,8 @@
 
 This demonstration uses fictional A+ Active Services client requests. The morning job can prepare a review packet and a draft while counsel is away. A packet retains the exact clause, current dependency, proposed action, and status. Counsel still decides whether to accept a draft, assign an owner, send a message, or represent that work is complete.
 
+The [public reproduction guide](https://gist.github.com/ChaiWithJai/24ac06f5349bf5f4c6ff3a3dae6d3557) gives the short command sequence and the observed limits of the scheduled run.
+
 The four example items cover a workshop plan, escalation coverage, recording deletion evidence, and an acceptance date that cannot be calculated yet. AMB-003 cites an amendment that replaces the earlier retention clause. AMB-004 keeps its due date unknown because delivery has not been confirmed. No real client agreement, patient record, or employee interview is included.
 
 ## Inspect the workflow without a model
