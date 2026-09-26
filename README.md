@@ -18,7 +18,7 @@ AMBIENT_DB=/tmp/ambient-legal-demo.sqlite python3 ambient.py packets
 
 The first tick prepares four packets. A second tick makes no duplicates. This is a deterministic fixture run, not Bonsai inference. `python3 make_evidence.py` writes a labeled copy of that run to `evidence/deterministic-run.json` using a temporary database. The local SQLite database records packet preparation and review decisions in `audit`. It does not synchronize with Slack or Google Drive.
 
-To add another request, copy `incoming-example.json`, give it a new `AMB-` ID, and run `python3 ambient.py submit --file your-request.json`. The next scheduled pass will see it. Submission rejects duplicate IDs and records an audit event. This file-based handoff represents a local request source; automatic ingestion from an inbox or Drive folder is outside this demo.
+To add another request, copy `incoming-example.json`, give it a new `AMB-` ID, and run `python3 ambient.py submit --file your-request.json`. The next scheduled pass will see it. Submission rejects duplicate IDs and records an audit event. This file-based handoff represents a local request source; the [connected intake guide](docs/connected-intake.md) imports a selected commitment from the Google register and its Drive agreement. Folder watching is not implemented.
 
 ## Run through Ternary Bonsai 2 27B and Hermes
 

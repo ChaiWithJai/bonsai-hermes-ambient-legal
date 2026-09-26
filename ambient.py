@@ -86,7 +86,7 @@ def scan_queue(as_of: str) -> dict:
             if days is not None and days > 14:
                 continue
             packet = conn.execute("SELECT id,state FROM packets WHERE item_id=? AND item_revision=? ORDER BY created_at DESC LIMIT 1", (r["id"], r["revision"])).fetchone()
-            result.append({"id": r["id"], "client": r["client"], "request": r["request"], "source": r["source"], "due": r["due"], "days_until_due": days, "dependency": r["dependency"], "revision": r["revision"], "packet": dict(packet) if packet else None})
+            result.append({"id": r["id"], "client": r["client"], "request": r["request"], "source": r["source"], "due": r["due"], "calendar_days_until_due": days, "known_owner": r["owner"], "dependency": r["dependency"], "revision": r["revision"], "packet": dict(packet) if packet else None})
         result.sort(key=lambda r: (r["due"] is None, r["due"] or "", r["id"]))
         return {"fictional": True, "as_of": as_of, "count": len(result), "items": result}
 
