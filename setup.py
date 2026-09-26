@@ -24,6 +24,8 @@ def main():
     config["mcp_servers"]["ambient_legal"]["args"] = [str(ROOT / "ambient.py"), "mcp"]
     if os.environ.get("AMBIENT_TRACE") == "1":
         config["mcp_servers"]["ambient_legal"]["env"] = {"AMBIENT_TRACE": "1", "MLFLOW_DISABLE_AGENT_HINT": "1", "MLFLOW_TRACKING_URI": os.environ.get("MLFLOW_TRACKING_URI", "http://127.0.0.1:5210")}
+    server_env = config["mcp_servers"]["ambient_legal"].setdefault("env", {})
+    server_env["AMBIENT_DB"] = str(Path(os.environ.get("AMBIENT_DB", ROOT / "ambient.sqlite")).expanduser().resolve())
     out.mkdir(parents=True)
     (out / "config.yaml").write_text(json.dumps(config, indent=2) + "\n")
     shutil.copy2(ROOT / "SOUL.md", out / "SOUL.md")

@@ -1,10 +1,10 @@
 # Ambient legal assistant
 
-This demonstration uses fictional A+ Active Services client requests. The morning job can prepare a review packet and a draft while counsel is away. A packet retains the exact clause, current dependency, proposed action, and status. Counsel still decides whether to accept a draft, assign an owner, send a message, or represent that work is complete.
+Prepare the next client request for counsel before the morning review. The scheduled agent assembles the source clause, unresolved dependency and proposed action, then saves a draft for counsel to inspect. Counsel still decides whether to accept a draft, assign an owner, send a message, or represent that work is complete.
 
 The [public reproduction guide](https://gist.github.com/ChaiWithJai/24ac06f5349bf5f4c6ff3a3dae6d3557) gives the short command sequence and the observed limits of the scheduled run.
 
-The four example items cover a workshop plan, escalation coverage, recording deletion evidence, and an acceptance date that cannot be calculated yet. AMB-003 cites an amendment that replaces the earlier retention clause. AMB-004 keeps its due date unknown because delivery has not been confirmed. No real client agreement, patient record, or employee interview is included.
+The sample A+ Active Services requests cover a workshop plan, escalation coverage, recording deletion evidence, and an acceptance date that cannot be calculated yet. AMB-003 cites an amendment that replaces the earlier retention clause. AMB-004 keeps its due date unknown because delivery has not been confirmed. No real client agreement, patient record, or employee interview is included.
 
 ## Inspect the workflow without a model
 
@@ -18,7 +18,7 @@ AMBIENT_DB=/tmp/ambient-legal-demo.sqlite python3 ambient.py packets
 
 The first tick prepares four packets. A second tick makes no duplicates. This is a deterministic fixture run, not Bonsai inference. `python3 make_evidence.py` writes a labeled copy of that run to `evidence/deterministic-run.json` using a temporary database. The local SQLite database records packet preparation and review decisions in `audit`. It does not synchronize with Slack or Google Drive.
 
-To add another fictional request, copy `incoming-example.json`, give it a new `AMB-` ID, and run `python3 ambient.py submit --file your-request.json`. The next scheduled pass will see it. Submission rejects duplicate IDs and records an audit event. This file-based handoff represents a local request source; automatic ingestion from an inbox or Drive folder is outside this demo.
+To add another request, copy `incoming-example.json`, give it a new `AMB-` ID, and run `python3 ambient.py submit --file your-request.json`. The next scheduled pass will see it. Submission rejects duplicate IDs and records an audit event. This file-based handoff represents a local request source; automatic ingestion from an inbox or Drive folder is outside this demo.
 
 ## Run through Ternary Bonsai 2 27B and Hermes
 
@@ -35,9 +35,12 @@ In another terminal, run `python3 settings_proxy.py`. On macOS, run `python3 ins
 Create the isolated profile under the installed Hermes home:
 
 ```sh
+export AMBIENT_DB="$HOME/.local/state/bonsai-ambient-legal/requests.sqlite"
 python3 setup.py --out "$HOME/.hermes/profiles/ambient-legal-demo"
 hermes --profile ambient-legal-demo chat
 ```
+
+Use the same `AMBIENT_DB` value for CLI submissions and inspection. Setup saves its absolute path in the MCP configuration so the scheduled agent reads the same queue, even from another working directory. An existing profile needs its MCP environment updated and its tool process restarted.
 
 The setup refuses to overwrite an existing profile. It adds no credentials. The profile exposes four narrow tools: queue scan, packet preparation, draft saving, and packet readback. Tool search and memory are off. The model cannot approve its own work, send a client message, or assign an owner through these tools. Counsel can record a reviewed decision from a local terminal with `python3 ambient.py review --packet AMB-001-r0 --reviewer "Counsel name" --decision approve_draft --note "Reviewed against the source clause"`. This saves a local decision only. An approved draft remains a draft until a separate authorized workflow acts on it.
 
@@ -51,4 +54,4 @@ Run `python3 evaluate.py --out evidence/evaluation.json` to check saved packet f
 
 After the profile and model work in a manual run, `sh install_schedule.sh` creates a Hermes cron job at 7 a.m. on weekdays. Hermes injects the current America/New_York date from the profile's `scripts/ambient_date.py`. The job scans the queue and works on one item per run, nearest due first, so the draft fits the local response budget. Its report remains local. It does not notify counsel or clients. Check `hermes --profile ambient-legal-demo cron list` and `hermes --profile ambient-legal-demo cron runs <job-id>` for durable execution results. The Mac, Hermes scheduler, proxy, and model must remain available. To make work visible in Slack, configure a separate Hermes Slack app and delivery target under your own credentials; this repository does not install one.
 
-The fixture demonstrates scheduled preparation and a bounded local agent tool surface. It does not ingest arbitrary agreements, decide legal meaning, provide human approval, prove 24-hour uptime, or demonstrate MLflow traces until an actual model run is recorded. The deterministic evidence file says so explicitly.
+The recorded scheduled runs produced local drafts awaiting counsel. The [verification record](evidence/live-verification.md) includes MLflow tool traces and model HTTP captures. Arbitrary agreement ingestion, connected intake, counsel approval and continuous service availability remain unverified.

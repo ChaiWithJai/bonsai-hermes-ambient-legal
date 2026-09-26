@@ -74,6 +74,31 @@ class AmbientTests(unittest.TestCase):
         tick = subprocess.run([sys.executable, str(ROOT / "ambient.py"), "tick", "--as-of", "2026-09-26"], text=True, capture_output=True, env=env, check=True)
         self.assertEqual(json.loads(tick.stdout)["new_packets"], 4)
 
+    def test_profile_reads_the_database_used_by_cli_submission(self):
+        with tempfile.TemporaryDirectory() as directory:
+            home = Path(directory)
+            database = home / "state" / "requests.sqlite"
+            profile = home / ".hermes" / "profiles" / "setup-check"
+            env = dict(os.environ, HOME=str(home), AMBIENT_DB=str(database))
+            subprocess.run([sys.executable, str(ROOT / "ambient.py"), "submit",
+                            "--file", str(ROOT / "incoming-example.json")],
+                           env=env, capture_output=True, text=True, check=True)
+            subprocess.run([sys.executable, str(ROOT / "setup.py"), "--out", str(profile)],
+                           env=env, capture_output=True, text=True, check=True)
+            server = json.loads((profile / "config.yaml").read_text())["mcp_servers"]["ambient_legal"]
+            self.assertEqual(server["env"]["AMBIENT_DB"], str(database.resolve()))
+            child_env = dict(os.environ)
+            child_env.pop("AMBIENT_DB", None)
+            child_env.update(server["env"])
+            request = {"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                       "params": {"name": "scan_queue", "arguments": {"as_of": "2026-09-26"}}}
+            result = subprocess.run([server["command"], *server["args"]], cwd=home,
+                                    env=child_env, input=json.dumps(request)+"\n",
+                                    capture_output=True, text=True, check=True)
+            response = json.loads(result.stdout)["result"]
+            self.assertFalse(response.get("isError"), response)
+            self.assertEqual(json.loads(response["content"][0]["text"])["count"], 5)
+
     def test_new_request_enters_next_pass_without_overwriting_prior_work(self):
         first = ambient.tick("2026-09-26")
         self.assertEqual(first["new_packets"], 4)
