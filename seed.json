@@ -1,0 +1,54 @@
+{
+  "notice": "FICTIONAL DEMO DATA. These clients, signatures, requests, and deadlines are invented.",
+  "as_of": "2026-09-26",
+  "items": [
+    {
+      "id": "AMB-001",
+      "client": "Aster Clinical AI (fictional)",
+      "request": "Prepare the facilitation plan for two clinician-manager workshops.",
+      "source": "Aster SOW v1 §2.1",
+      "clause": "A+ Active will deliver a facilitation plan for two clinician-manager workshops by September 28, 2026. The plan will include session objectives, participation options, accessibility needs and escalation contacts.",
+      "due": "2026-09-28",
+      "owner": null,
+      "dependency": "Counsel must confirm an owner and approve the plan before delivery.",
+      "next_action": "Draft a plan outline and route it to counsel for owner assignment and review.",
+      "draft_outline": ["Session objectives: pending sponsor confirmation", "Participation options: individual and group formats to review", "Accessibility needs: ask sponsor for requirements", "Escalation contacts: primary and backup not yet named"]
+    },
+    {
+      "id": "AMB-002",
+      "client": "Harbor Care Intelligence (fictional)",
+      "request": "Prepare an escalation coverage handoff for upcoming workshops.",
+      "source": "Harbor SOW v1 §3.1",
+      "clause": "By September 29, 2026, A+ Active will name a primary and backup contact for workshop delivery concerns. Requests received Monday through Friday, 9 a.m. to 5 p.m. America/New_York, excluding US federal holidays, will be acknowledged within one business day. Acknowledgment does not promise resolution within that period.",
+      "due": "2026-09-29",
+      "owner": null,
+      "dependency": "A human must accept primary and backup coverage.",
+      "next_action": "Prepare coverage criteria and ask counsel to name two people.",
+      "draft_outline": ["Coverage window: weekdays 9 a.m. to 5 p.m. Eastern, excluding US federal holidays", "Primary contact: unassigned", "Backup contact: unassigned", "Acknowledgment target: one business day; resolution time unspecified"]
+    },
+    {
+      "id": "AMB-003",
+      "client": "Aster Clinical AI (fictional)",
+      "request": "Check the deletion evidence for September 22 workshop recordings.",
+      "source": "Aster amendment v2 §1, replacing MSA v1 §4.4",
+      "clause": "Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 §4.4. Retain a deletion confirmation, not the recording itself.",
+      "due": "2026-10-06",
+      "owner": null,
+      "dependency": "Deletion confirmation has not been provided.",
+      "next_action": "Prepare an evidence request for human approval; do not claim deletion occurred.",
+      "draft_outline": ["Request written confirmation of deletion by October 6, 2026", "Reference the signed amendment as the controlling source", "Retain confirmation only; do not retain the recording", "Deletion status: unverified"]
+    },
+    {
+      "id": "AMB-004",
+      "client": "Harbor Care Intelligence (fictional)",
+      "request": "Record acceptance or requested changes after workshop material delivery.",
+      "source": "Harbor SOW v1 §5.1",
+      "clause": "The client will review workshop materials within five business days after delivery. A+ Active will record acceptance or requested changes. The delivery date has not been confirmed; no acceptance deadline has been established.",
+      "due": null,
+      "owner": null,
+      "dependency": "Delivery date is unknown. No acceptance deadline can be calculated.",
+      "next_action": "Prepare a request to confirm the delivery date; leave the due date unknown.",
+      "draft_outline": ["Ask for the actual workshop material delivery date", "Calculate five business days only after the date is confirmed", "Record acceptance or requested changes after client review", "Current acceptance deadline: unknown"]
+    }
+  ]
+}

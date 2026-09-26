@@ -1,0 +1,12 @@
+{
+  "id": "AMB-005",
+  "client": "Juniper Clinical Systems (fictional)",
+  "request": "Prepare the monthly delivery and concerns review for counsel.",
+  "source": "Juniper SOW v1 §2.3",
+  "clause": "A+ Active will deliver the monthly program review by October 2, 2026, covering sessions completed, participant feedback themes, unresolved concerns and agreed next steps. The review will not make clinical efficacy claims.",
+  "due": "2026-10-02",
+  "owner": null,
+  "dependency": "Session counts and feedback themes need verification by the service team.",
+  "next_action": "Prepare a review outline with evidence placeholders and route it to counsel.",
+  "draft_outline": ["Sessions completed: verify with delivery records", "Feedback themes: include only anonymized themes", "Unresolved concerns: obtain owner and status", "Next steps: mark as proposed until counsel review", "Clinical efficacy claims: exclude"]
+}

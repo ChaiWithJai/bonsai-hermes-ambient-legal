@@ -1,0 +1,17 @@
+{
+  "scope": "Deterministic checks on the current local SQLite state and saved model drafts. Human legal review is not included.",
+  "packets": 4,
+  "model_drafts": 3,
+  "source_fields_match_fixture": true,
+  "saved_drafts_cite_source": 3,
+  "saved_drafts_awaiting_counsel": 3,
+  "unknown_acceptance_due_preserved": true,
+  "amendment_record_points_to_v2": true,
+  "human_review_events": 0,
+  "draft_word_counts": {
+    "AMB-004-r0": 236,
+    "AMB-001-r0": 171,
+    "AMB-002-r0": 186
+  },
+  "mlflow_run_id": "6eb0678f49694d9a8072fb387364f30b"
+}

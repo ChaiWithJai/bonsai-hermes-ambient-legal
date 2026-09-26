@@ -1,0 +1,4 @@
+ambient.sqlite*
+exchanges/
+logs/
+__pycache__/

@@ -1,0 +1,10 @@
+test_mcp_round_trip_and_deterministic_tick_cli (test_ambient.AmbientTests.test_mcp_round_trip_and_deterministic_tick_cli) ... ok
+test_model_draft_requires_review_and_cannot_silently_replace (test_ambient.AmbientTests.test_model_draft_requires_review_and_cannot_silently_replace) ... ok
+test_new_request_enters_next_pass_without_overwriting_prior_work (test_ambient.AmbientTests.test_new_request_enters_next_pass_without_overwriting_prior_work) ... ok
+test_stale_revision_cannot_create_packet (test_ambient.AmbientTests.test_stale_revision_cannot_create_packet) ... ok
+test_unattended_pass_is_idempotent_and_source_grounded (test_ambient.AmbientTests.test_unattended_pass_is_idempotent_and_source_grounded) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.082s
+
+OK

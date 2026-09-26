@@ -1,0 +1,333 @@
+{
+  "kind": "deterministic_fixture_run",
+  "model_inference": false,
+  "hermes_execution": false,
+  "slack_delivery": false,
+  "as_of": "2026-09-26",
+  "before": {
+    "fictional": true,
+    "as_of": "2026-09-26",
+    "count": 4,
+    "items": [
+      {
+        "id": "AMB-001",
+        "client": "Aster Clinical AI (fictional)",
+        "request": "Prepare the facilitation plan for two clinician-manager workshops.",
+        "source": "Aster SOW v1 \u00a72.1",
+        "due": "2026-09-28",
+        "days_until_due": 2,
+        "dependency": "Counsel must confirm an owner and approve the plan before delivery.",
+        "revision": 0,
+        "packet": null
+      },
+      {
+        "id": "AMB-002",
+        "client": "Harbor Care Intelligence (fictional)",
+        "request": "Prepare an escalation coverage handoff for upcoming workshops.",
+        "source": "Harbor SOW v1 \u00a73.1",
+        "due": "2026-09-29",
+        "days_until_due": 3,
+        "dependency": "A human must accept primary and backup coverage.",
+        "revision": 0,
+        "packet": null
+      },
+      {
+        "id": "AMB-003",
+        "client": "Aster Clinical AI (fictional)",
+        "request": "Check the deletion evidence for September 22 workshop recordings.",
+        "source": "Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4",
+        "due": "2026-10-06",
+        "days_until_due": 10,
+        "dependency": "Deletion confirmation has not been provided.",
+        "revision": 0,
+        "packet": null
+      },
+      {
+        "id": "AMB-004",
+        "client": "Harbor Care Intelligence (fictional)",
+        "request": "Record acceptance or requested changes after workshop material delivery.",
+        "source": "Harbor SOW v1 \u00a75.1",
+        "due": null,
+        "days_until_due": null,
+        "dependency": "Delivery date is unknown. No acceptance deadline can be calculated.",
+        "revision": 0,
+        "packet": null
+      }
+    ]
+  },
+  "first_tick": {
+    "fictional": true,
+    "as_of": "2026-09-26",
+    "new_packets": 4,
+    "packets": [
+      {
+        "fictional": true,
+        "item_id": "AMB-001",
+        "as_of": "2026-09-26",
+        "client": "Aster Clinical AI (fictional)",
+        "draft_subject": "Counsel review: Prepare the facilitation plan for two clinician-manager workshops.",
+        "source": "Aster SOW v1 \u00a72.1",
+        "source_clause": "A+ Active will deliver a facilitation plan for two clinician-manager workshops by September 28, 2026. The plan will include session objectives, participation options, accessibility needs and escalation contacts.",
+        "due": "2026-09-28",
+        "due_display": "2026-09-28",
+        "known_owner": null,
+        "open_dependency": "Counsel must confirm an owner and approve the plan before delivery.",
+        "proposed_next_action": "Draft a plan outline and route it to counsel for owner assignment and review.",
+        "draft_work_product": [
+          "Session objectives: pending sponsor confirmation",
+          "Participation options: individual and group formats to review",
+          "Accessibility needs: ask sponsor for requirements",
+          "Escalation contacts: primary and backup not yet named"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-001-r0",
+        "state": "awaiting_counsel",
+        "created": true
+      },
+      {
+        "fictional": true,
+        "item_id": "AMB-002",
+        "as_of": "2026-09-26",
+        "client": "Harbor Care Intelligence (fictional)",
+        "draft_subject": "Counsel review: Prepare an escalation coverage handoff for upcoming workshops.",
+        "source": "Harbor SOW v1 \u00a73.1",
+        "source_clause": "By September 29, 2026, A+ Active will name a primary and backup contact for workshop delivery concerns. Requests received Monday through Friday, 9 a.m. to 5 p.m. America/New_York, excluding US federal holidays, will be acknowledged within one business day. Acknowledgment does not promise resolution within that period.",
+        "due": "2026-09-29",
+        "due_display": "2026-09-29",
+        "known_owner": null,
+        "open_dependency": "A human must accept primary and backup coverage.",
+        "proposed_next_action": "Prepare coverage criteria and ask counsel to name two people.",
+        "draft_work_product": [
+          "Coverage window: weekdays 9 a.m. to 5 p.m. Eastern, excluding US federal holidays",
+          "Primary contact: unassigned",
+          "Backup contact: unassigned",
+          "Acknowledgment target: one business day; resolution time unspecified"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-002-r0",
+        "state": "awaiting_counsel",
+        "created": true
+      },
+      {
+        "fictional": true,
+        "item_id": "AMB-003",
+        "as_of": "2026-09-26",
+        "client": "Aster Clinical AI (fictional)",
+        "draft_subject": "Counsel review: Check the deletion evidence for September 22 workshop recordings.",
+        "source": "Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4",
+        "source_clause": "Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 \u00a74.4. Retain a deletion confirmation, not the recording itself.",
+        "due": "2026-10-06",
+        "due_display": "2026-10-06",
+        "known_owner": null,
+        "open_dependency": "Deletion confirmation has not been provided.",
+        "proposed_next_action": "Prepare an evidence request for human approval; do not claim deletion occurred.",
+        "draft_work_product": [
+          "Request written confirmation of deletion by October 6, 2026",
+          "Reference the signed amendment as the controlling source",
+          "Retain confirmation only; do not retain the recording",
+          "Deletion status: unverified"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-003-r0",
+        "state": "awaiting_counsel",
+        "created": true
+      },
+      {
+        "fictional": true,
+        "item_id": "AMB-004",
+        "as_of": "2026-09-26",
+        "client": "Harbor Care Intelligence (fictional)",
+        "draft_subject": "Counsel review: Record acceptance or requested changes after workshop material delivery.",
+        "source": "Harbor SOW v1 \u00a75.1",
+        "source_clause": "The client will review workshop materials within five business days after delivery. A+ Active will record acceptance or requested changes. The delivery date has not been confirmed; no acceptance deadline has been established.",
+        "due": null,
+        "due_display": "Unknown; confirm the delivery date before calculating an acceptance deadline",
+        "known_owner": null,
+        "open_dependency": "Delivery date is unknown. No acceptance deadline can be calculated.",
+        "proposed_next_action": "Prepare a request to confirm the delivery date; leave the due date unknown.",
+        "draft_work_product": [
+          "Ask for the actual workshop material delivery date",
+          "Calculate five business days only after the date is confirmed",
+          "Record acceptance or requested changes after client review",
+          "Current acceptance deadline: unknown"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-004-r0",
+        "state": "awaiting_counsel",
+        "created": true
+      }
+    ],
+    "awaiting_counsel": 4
+  },
+  "second_tick": {
+    "fictional": true,
+    "as_of": "2026-09-26",
+    "new_packets": 0,
+    "packets": [],
+    "awaiting_counsel": 4
+  },
+  "packets": {
+    "fictional": true,
+    "count": 4,
+    "packets": [
+      {
+        "fictional": true,
+        "item_id": "AMB-001",
+        "as_of": "2026-09-26",
+        "client": "Aster Clinical AI (fictional)",
+        "draft_subject": "Counsel review: Prepare the facilitation plan for two clinician-manager workshops.",
+        "source": "Aster SOW v1 \u00a72.1",
+        "source_clause": "A+ Active will deliver a facilitation plan for two clinician-manager workshops by September 28, 2026. The plan will include session objectives, participation options, accessibility needs and escalation contacts.",
+        "due": "2026-09-28",
+        "due_display": "2026-09-28",
+        "known_owner": null,
+        "open_dependency": "Counsel must confirm an owner and approve the plan before delivery.",
+        "proposed_next_action": "Draft a plan outline and route it to counsel for owner assignment and review.",
+        "draft_work_product": [
+          "Session objectives: pending sponsor confirmation",
+          "Participation options: individual and group formats to review",
+          "Accessibility needs: ask sponsor for requirements",
+          "Escalation contacts: primary and backup not yet named"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-001-r0",
+        "state": "awaiting_counsel",
+        "created_at": "2026-09-26T16:42:33.873867+00:00",
+        "reviewed_at": null,
+        "reviewer": null,
+        "decision": null
+      },
+      {
+        "fictional": true,
+        "item_id": "AMB-002",
+        "as_of": "2026-09-26",
+        "client": "Harbor Care Intelligence (fictional)",
+        "draft_subject": "Counsel review: Prepare an escalation coverage handoff for upcoming workshops.",
+        "source": "Harbor SOW v1 \u00a73.1",
+        "source_clause": "By September 29, 2026, A+ Active will name a primary and backup contact for workshop delivery concerns. Requests received Monday through Friday, 9 a.m. to 5 p.m. America/New_York, excluding US federal holidays, will be acknowledged within one business day. Acknowledgment does not promise resolution within that period.",
+        "due": "2026-09-29",
+        "due_display": "2026-09-29",
+        "known_owner": null,
+        "open_dependency": "A human must accept primary and backup coverage.",
+        "proposed_next_action": "Prepare coverage criteria and ask counsel to name two people.",
+        "draft_work_product": [
+          "Coverage window: weekdays 9 a.m. to 5 p.m. Eastern, excluding US federal holidays",
+          "Primary contact: unassigned",
+          "Backup contact: unassigned",
+          "Acknowledgment target: one business day; resolution time unspecified"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-002-r0",
+        "state": "awaiting_counsel",
+        "created_at": "2026-09-26T16:42:33.874266+00:00",
+        "reviewed_at": null,
+        "reviewer": null,
+        "decision": null
+      },
+      {
+        "fictional": true,
+        "item_id": "AMB-003",
+        "as_of": "2026-09-26",
+        "client": "Aster Clinical AI (fictional)",
+        "draft_subject": "Counsel review: Check the deletion evidence for September 22 workshop recordings.",
+        "source": "Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4",
+        "source_clause": "Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 \u00a74.4. Retain a deletion confirmation, not the recording itself.",
+        "due": "2026-10-06",
+        "due_display": "2026-10-06",
+        "known_owner": null,
+        "open_dependency": "Deletion confirmation has not been provided.",
+        "proposed_next_action": "Prepare an evidence request for human approval; do not claim deletion occurred.",
+        "draft_work_product": [
+          "Request written confirmation of deletion by October 6, 2026",
+          "Reference the signed amendment as the controlling source",
+          "Retain confirmation only; do not retain the recording",
+          "Deletion status: unverified"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-003-r0",
+        "state": "awaiting_counsel",
+        "created_at": "2026-09-26T16:42:33.874486+00:00",
+        "reviewed_at": null,
+        "reviewer": null,
+        "decision": null
+      },
+      {
+        "fictional": true,
+        "item_id": "AMB-004",
+        "as_of": "2026-09-26",
+        "client": "Harbor Care Intelligence (fictional)",
+        "draft_subject": "Counsel review: Record acceptance or requested changes after workshop material delivery.",
+        "source": "Harbor SOW v1 \u00a75.1",
+        "source_clause": "The client will review workshop materials within five business days after delivery. A+ Active will record acceptance or requested changes. The delivery date has not been confirmed; no acceptance deadline has been established.",
+        "due": null,
+        "due_display": "Unknown; confirm the delivery date before calculating an acceptance deadline",
+        "known_owner": null,
+        "open_dependency": "Delivery date is unknown. No acceptance deadline can be calculated.",
+        "proposed_next_action": "Prepare a request to confirm the delivery date; leave the due date unknown.",
+        "draft_work_product": [
+          "Ask for the actual workshop material delivery date",
+          "Calculate five business days only after the date is confirmed",
+          "Record acceptance or requested changes after client review",
+          "Current acceptance deadline: unknown"
+        ],
+        "model_draft": null,
+        "model_draft_status": "No model-authored draft has been saved; this outline is a deterministic fixture.",
+        "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+        "packet_id": "AMB-004-r0",
+        "state": "awaiting_counsel",
+        "created_at": "2026-09-26T16:42:33.874695+00:00",
+        "reviewed_at": null,
+        "reviewer": null,
+        "decision": null
+      }
+    ]
+  },
+  "audit": [
+    {
+      "seq": 1,
+      "at": "2026-09-26T16:42:33.873993+00:00",
+      "action": "packet_prepared",
+      "item_id": "AMB-001",
+      "packet_id": "AMB-001-r0",
+      "detail": "{\"as_of\": \"2026-09-26\", \"source\": \"Aster SOW v1 \\u00a72.1\"}"
+    },
+    {
+      "seq": 2,
+      "at": "2026-09-26T16:42:33.874275+00:00",
+      "action": "packet_prepared",
+      "item_id": "AMB-002",
+      "packet_id": "AMB-002-r0",
+      "detail": "{\"as_of\": \"2026-09-26\", \"source\": \"Harbor SOW v1 \\u00a73.1\"}"
+    },
+    {
+      "seq": 3,
+      "at": "2026-09-26T16:42:33.874497+00:00",
+      "action": "packet_prepared",
+      "item_id": "AMB-003",
+      "packet_id": "AMB-003-r0",
+      "detail": "{\"as_of\": \"2026-09-26\", \"source\": \"Aster amendment v2 \\u00a71, replacing MSA v1 \\u00a74.4\"}"
+    },
+    {
+      "seq": 4,
+      "at": "2026-09-26T16:42:33.874705+00:00",
+      "action": "packet_prepared",
+      "item_id": "AMB-004",
+      "packet_id": "AMB-004-r0",
+      "detail": "{\"as_of\": \"2026-09-26\", \"source\": \"Harbor SOW v1 \\u00a75.1\"}"
+    }
+  ]
+}
