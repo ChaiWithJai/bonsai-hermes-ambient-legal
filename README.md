@@ -11,14 +11,14 @@ The sample A+ Active Services requests cover a workshop plan, escalation coverag
 From this directory:
 
 ```sh
-python3 -m unittest -v test_ambient.py
+python3 -m unittest discover -s tests -v
 AMBIENT_DB=/tmp/ambient-legal-demo.sqlite python3 ambient.py tick --as-of 2026-09-26
 AMBIENT_DB=/tmp/ambient-legal-demo.sqlite python3 ambient.py packets
 ```
 
 The first tick prepares four packets. A second tick makes no duplicates. This is a deterministic fixture run, not Bonsai inference. `python3 make_evidence.py` writes a labeled copy of that run to `evidence/deterministic-run.json` using a temporary database. The local SQLite database records packet preparation and review decisions in `audit`. It does not synchronize with Slack or Google Drive.
 
-To add another request, copy `incoming-example.json`, give it a new `AMB-` ID, and run `python3 ambient.py submit --file your-request.json`. The next scheduled pass will see it. Submission rejects duplicate IDs and records an audit event. This file-based handoff represents a local request source; the [connected intake guide](docs/connected-intake.md) imports a selected commitment from the Google register and its Drive agreement. Folder watching is not implemented.
+To add another request, copy `fixtures/incoming-example.json`, give it a new `AMB-` ID, and run `python3 ambient.py submit --file your-request.json`. The next scheduled pass will see it. Submission rejects duplicate IDs and records an audit event. This file-based handoff represents a local request source; the [connected intake guide](docs/connected-intake.md) imports a selected commitment from the Google register and its Drive agreement. Folder watching is not implemented.
 
 ## Run through Ternary Bonsai 2 27B and Hermes
 
@@ -30,7 +30,7 @@ export BONSAI_MODEL=/absolute/path/to/Ternary-Bonsai-2-27B-PQ2_0.gguf
 sh start_model.sh
 ```
 
-In another terminal, run `python3 settings_proxy.py`. On macOS, run `python3 install_proxy.py --install` after stopping the manual proxy to keep it running as a user LaunchAgent. It serves `127.0.0.1:5262` and forwards to the model on `127.0.0.1:62737`. It applies the settings in `sampling.json`: temperature 1, top-p 0.95, top-k 20, min-p 0.05, presence penalty 0, repetition penalty 1, medium thinking, and at most 1,536 response tokens. The server uses 65,536 context tokens, one slot, GPU offload, `--jinja`, and a 512-token reasoning budget. The proxy stores local request and response JSON under `exchanges/`, so keep that directory private if you replace the fictional data with sensitive material. The proxy service does not start the Bonsai model server; that remains a separate prerequisite.
+In another terminal, run `python3 settings_proxy.py`. On macOS, run `python3 install_proxy.py --install` after stopping the manual proxy to keep it running as a user LaunchAgent. It serves `127.0.0.1:5262` and forwards to the model on `127.0.0.1:62737`. It applies the settings in `config/sampling.json`: temperature 1, top-p 0.95, top-k 20, min-p 0.05, presence penalty 0, repetition penalty 1, medium thinking, and at most 1,536 response tokens. The server uses 65,536 context tokens, one slot, GPU offload, `--jinja`, and a 512-token reasoning budget. The proxy stores local request and response JSON under `exchanges/`, so keep that directory private if you replace the fictional data with sensitive material. The proxy service does not start the Bonsai model server; that remains a separate prerequisite.
 
 Create the isolated profile under the installed Hermes home:
 
@@ -55,3 +55,5 @@ Run `python3 evaluate.py --out evidence/evaluation.json` to check saved packet f
 After the profile and model work in a manual run, `sh install_schedule.sh` creates a Hermes cron job at 7 a.m. on weekdays. Hermes injects the current America/New_York date from the profile's `scripts/ambient_date.py`. The job scans the queue and works on one item per run, nearest due first, so the draft fits the local response budget. Its report remains local. It does not notify counsel or clients. Check `hermes --profile ambient-legal-demo cron list` and `hermes --profile ambient-legal-demo cron runs <job-id>` for durable execution results. The Mac, Hermes scheduler, proxy, and model must remain available. To make work visible in Slack, configure a separate Hermes Slack app and delivery target under your own credentials; this repository does not install one.
 
 The recorded scheduled runs produced local drafts awaiting counsel. The [verification record](evidence/live-verification.md) includes MLflow tool traces and model HTTP captures. Arbitrary agreement ingestion, connected intake, counsel approval and continuous service availability remain unverified.
+
+Agent configuration lives in `config/`, sample requests in `fixtures/`, and regression tests in `tests/`. Intake and evidence-export utilities live in `scripts/`. The root commands remain the entry points for queue operations, profile setup and service startup.

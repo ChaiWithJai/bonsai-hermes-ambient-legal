@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DB = Path(os.environ.get("AMBIENT_DB", ROOT / "ambient.sqlite"))
-SEED = ROOT / "seed.json"
+SEED = ROOT / "fixtures/seed.json"
 
 
 def now() -> str:

@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("ambient", ROOT / "ambient.py")
 ambient = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(ambient)
@@ -85,7 +85,7 @@ class AmbientTests(unittest.TestCase):
             profile = home / ".hermes" / "profiles" / "setup-check"
             env = dict(os.environ, HOME=str(home), AMBIENT_DB=str(database))
             subprocess.run([sys.executable, str(ROOT / "ambient.py"), "submit",
-                            "--file", str(ROOT / "incoming-example.json")],
+                            "--file", str(ROOT / "fixtures/incoming-example.json")],
                            env=env, capture_output=True, text=True, check=True)
             subprocess.run([sys.executable, str(ROOT / "setup.py"), "--out", str(profile)],
                            env=env, capture_output=True, text=True, check=True)
@@ -106,7 +106,7 @@ class AmbientTests(unittest.TestCase):
     def test_new_request_enters_next_pass_without_overwriting_prior_work(self):
         first = ambient.tick("2026-09-26")
         self.assertEqual(first["new_packets"], 4)
-        example = json.loads((ROOT / "incoming-example.json").read_text())
+        example = json.loads((ROOT / "fixtures/incoming-example.json").read_text())
         self.assertTrue(ambient.submit_request(example)["accepted"])
         with self.assertRaisesRegex(ValueError, "already exists"):
             ambient.submit_request(example)

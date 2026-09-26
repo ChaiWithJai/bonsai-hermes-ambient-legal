@@ -13,7 +13,7 @@ import evaluate
 class EvaluationTests(unittest.TestCase):
     def test_imported_request_is_checked_and_corruption_is_detected(self):
         with tempfile.TemporaryDirectory() as directory, patch.object(ambient, "DB", Path(directory) / "queue.sqlite"):
-            item = json.loads((ambient.ROOT / "incoming-example.json").read_text())
+            item = json.loads((ambient.ROOT / "fixtures/incoming-example.json").read_text())
             ambient.submit_request(item)
             ambient.prepare_packet(item["id"], 0, "2026-09-26")
             self.assertTrue(evaluate.evaluate()["source_fields_match_registered_request"])

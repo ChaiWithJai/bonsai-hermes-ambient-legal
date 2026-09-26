@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 UPSTREAM = os.environ.get("BONSAI_UPSTREAM", "http://127.0.0.1:62737").rstrip("/")
 if urlparse(UPSTREAM).hostname not in ("127.0.0.1", "localhost", "::1"):
     raise ValueError("The demo upstream must be loopback.")
-SETTINGS = json.loads((ROOT / "sampling.json").read_text())
+SETTINGS = json.loads((ROOT / "config/sampling.json").read_text())
 
 
 def configure(payload):
