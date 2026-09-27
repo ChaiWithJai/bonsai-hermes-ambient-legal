@@ -1,0 +1,8 @@
+{
+  "source_database": "ambient.sqlite",
+  "replay_database": "<private local replay database>",
+  "preserved_item": "AMB-108",
+  "change": "Replay copy removes only AMB-108 packet and downstream audit; original database unchanged",
+  "soul_sha256": "d8ffe6ffe57514865839f36ea5e3e992bfbac998c84ce1b5ebfc17d4e02b68eb",
+  "code_sha256": "a95d9cf9bbb0316170737ffc7aa7ae7cdc41f103b25e87af557dedd261241a57"
+}

@@ -1,0 +1,22 @@
+{
+  "session_id": "20260926_170935_cb5815",
+  "prompt": "Run the ambient legal review for 2026-09-26. Scan the queue and read packet state. Work on exactly one item: the nearest due item with no packet or no model draft. Prepare its packet, save one source-grounded draft of at most 180 words, and report what counsel must decide. Do not prepare or save multiple items in this run. Do not send external messages or claim an owner accepted work.",
+  "tool_calls": [
+    "mcp__ambient_legal__scan_queue",
+    "mcp__ambient_legal__list_packets",
+    "mcp__ambient_legal__prepare_packet",
+    "mcp__ambient_legal__save_draft"
+  ],
+  "final_answer": "Run complete for 2026-09-26. One item handled, per the rule (one item, no external messages, no claimed completion).\n\nItem selected: AMB-108 (Northstar Clinic Network), due 2026-10-01 (5 calendar days out). It had no packet, and the two other no-draft candidates were further out or already drafted (AMB-003 due 2026-10-06, no model draft; AMB-001/002/004 already have drafts).\n\nWhat was done:\n- prepare_packet: created packet AMB-108-r0, state awaiting_counsel.\n- save_draft: saved a source-grounded draft of 141 words, well under the 180-word limit.\n\nWhat the draft states (source fact vs. unknown vs. proposed action):\n- Source fact: APL-008 revision 1, northstar-order-form.md Section 2.1 \u2014 A+ Active must provide the site schedule, accessibility plan, and named escalation leads by October 1, 2026; Northstar confirms rooms/staff separately.\n- Known: deadline 2026-10-01; recorded owner Khizar (responsibility acceptance unverified); open dependency = named leads and site schedule.\n- Unknown: current site schedule and named leads not yet on file; whether Khizar formally accepted the role.\n- Proposed action: assemble schedule + accessibility plan + named leads for counsel's review; counsel confirms owner and approves the follow-up; send to Northstar only after approval. No message sent, no completion asserted.\n\nWhat counsel must decide on AMB-108:\n1. Confirm whether Khizar is the correct and accepting owner for the named-leads/site-schedule deliverable.\n2. Approve the proposed follow-up (before 2026-10-01) and authorize any external communication to Northstar.\n3. Review the assembled schedule, accessibility plan, and escalation leads against the current register before any delivery claim is made.\n\nOther items still pending (not touched in this run):\n- AMB-001 (Aster, due 2026-09-28, 2 days): packet AMB-001-r0, draft awaiting counsel \u2014 owner confirmation and plan approval.\n- AMB-002 (Harbor, due 2026-09-29, 3 days): packet AMB-002-r0, draft awaiting counsel \u2014 human acceptance of primary and backup coverage contacts.\n- AMB-003 (Aster, due 2026-10-06, 10 days): packet AMB-003-r0, NO model draft yet \u2014 deletion evidence for the Sept 22 recordings under the signed amendment (which replaces MSA v1 \u00a74.4); needs a new draft next run.\n- AMB-004 (Harbor): packet AMB-004-r0, draft awaiting counsel \u2014 delivery date unknown, so no acceptance deadline can be set.\n\nNote: the nearest-due open item overall is AMB-001 (2 days), which already has a draft and is awaiting counsel \u2014 no further model work is due on it until counsel acts. Next scheduled run should prioritize AMB-003 (no draft) or, if AMB-001/002 are still unresolved by counsel, flag the urgency.",
+  "usage": [
+    {
+      "model": "bonsai-ui-public-ternary-bonsai2",
+      "api_call_count": 4,
+      "input_tokens": 7851,
+      "output_tokens": 2455,
+      "reasoning_tokens": 0,
+      "cost_status": "unknown"
+    }
+  ],
+  "scope": "One local Hermes/Bonsai replay using a previously imported Google snapshot. No new Google call, Slack delivery or human approval occurred in this session."
+}

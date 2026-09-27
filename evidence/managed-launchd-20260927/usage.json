@@ -1,0 +1,71 @@
+{
+  "requests": [
+    {
+      "prompt_tokens": 2940,
+      "completion_tokens": 107,
+      "total_tokens": 3047,
+      "cached_tokens": 0,
+      "exchange": "b174969c81d048f58c5404545d212872.json",
+      "http_status": 200,
+      "usage_available": true,
+      "scope": "main"
+    },
+    {
+      "prompt_tokens": 7348,
+      "completion_tokens": 632,
+      "total_tokens": 7980,
+      "cached_tokens": 2936,
+      "exchange": "474f4f66cf074770aa3859b50e8747a4.json",
+      "http_status": 200,
+      "usage_available": true,
+      "scope": "main"
+    },
+    {
+      "prompt_tokens": 7937,
+      "completion_tokens": 525,
+      "total_tokens": 8462,
+      "cached_tokens": 7344,
+      "exchange": "3602979a26d9423fa04fda1dd53e39a4.json",
+      "http_status": 200,
+      "usage_available": true,
+      "scope": "main"
+    },
+    {
+      "prompt_tokens": 8472,
+      "completion_tokens": 469,
+      "total_tokens": 8941,
+      "cached_tokens": 7933,
+      "exchange": "1ae2856cedfd4a338367b1b6b0eb6c77.json",
+      "http_status": 200,
+      "usage_available": true,
+      "scope": "main"
+    },
+    {
+      "prompt_tokens": 9006,
+      "completion_tokens": 900,
+      "total_tokens": 9906,
+      "cached_tokens": 8468,
+      "exchange": "3af5a412772a4388986f8ac44b6256d3.json",
+      "http_status": 200,
+      "usage_available": true,
+      "scope": "main"
+    },
+    {
+      "prompt_tokens": 9928,
+      "completion_tokens": 418,
+      "total_tokens": 10346,
+      "cached_tokens": 9002,
+      "exchange": "6fe3244e16bb4b4a90444b734bf4a3b8.json",
+      "http_status": 200,
+      "usage_available": true,
+      "scope": "main"
+    }
+  ],
+  "aggregate": {
+    "prompt_tokens": 45631,
+    "completion_tokens": 3051,
+    "total_tokens": 48682,
+    "cached_tokens": 35683
+  },
+  "scope": "All captured requests in owned run window, including validation retries and auxiliary requests if present; not isolated performance"
+}

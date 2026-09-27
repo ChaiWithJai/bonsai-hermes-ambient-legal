@@ -7,36 +7,43 @@ import os
 import re
 import sqlite3
 import sys
+from contextlib import contextmanager
+from collections.abc import Iterator
 from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DB = Path(os.environ.get("AMBIENT_DB", ROOT / "ambient.sqlite"))
-SEED = ROOT / "seed.json"
+SEED = ROOT / "fixtures/seed.json"
 
 
 def now() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def connect() -> sqlite3.Connection:
+@contextmanager
+def connect() -> Iterator[sqlite3.Connection]:
     DB.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB, timeout=10, isolation_level=None)
-    conn.row_factory = sqlite3.Row
-    conn.execute("PRAGMA journal_mode=WAL")
-    conn.execute("CREATE TABLE IF NOT EXISTS items (id TEXT PRIMARY KEY, body TEXT NOT NULL, revision INTEGER NOT NULL DEFAULT 0)")
-    conn.execute("CREATE TABLE IF NOT EXISTS packets (id TEXT PRIMARY KEY, item_id TEXT NOT NULL, item_revision INTEGER NOT NULL, body TEXT NOT NULL, state TEXT NOT NULL, created_at TEXT NOT NULL, reviewed_at TEXT, reviewer TEXT, decision TEXT, FOREIGN KEY(item_id) REFERENCES items(id))")
-    conn.execute("CREATE TABLE IF NOT EXISTS audit (seq INTEGER PRIMARY KEY, at TEXT NOT NULL, action TEXT NOT NULL, item_id TEXT NOT NULL, packet_id TEXT, detail TEXT NOT NULL)")
-    conn.execute("BEGIN IMMEDIATE")
     try:
-        if not conn.execute("SELECT 1 FROM items LIMIT 1").fetchone():
-            items = json.loads(SEED.read_text())["items"]
-            conn.executemany("INSERT INTO items(id,body,revision) VALUES (?,?,0)", [(r["id"], json.dumps(r)) for r in items])
-        conn.commit()
-    except Exception:
-        conn.rollback()
-        raise
-    return conn
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.execute("CREATE TABLE IF NOT EXISTS items (id TEXT PRIMARY KEY, body TEXT NOT NULL, revision INTEGER NOT NULL DEFAULT 0)")
+        conn.execute("CREATE TABLE IF NOT EXISTS packets (id TEXT PRIMARY KEY, item_id TEXT NOT NULL, item_revision INTEGER NOT NULL, body TEXT NOT NULL, state TEXT NOT NULL, created_at TEXT NOT NULL, reviewed_at TEXT, reviewer TEXT, decision TEXT, FOREIGN KEY(item_id) REFERENCES items(id))")
+        conn.execute("CREATE TABLE IF NOT EXISTS audit (seq INTEGER PRIMARY KEY, at TEXT NOT NULL, action TEXT NOT NULL, item_id TEXT NOT NULL, packet_id TEXT, detail TEXT NOT NULL)")
+        conn.execute("BEGIN IMMEDIATE")
+        try:
+            if not conn.execute("SELECT 1 FROM items LIMIT 1").fetchone():
+                items = json.loads(SEED.read_text())["items"]
+                conn.executemany("INSERT INTO items(id,body,revision) VALUES (?,?,0)", [(r["id"], json.dumps(r)) for r in items])
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        with conn:
+            yield conn
+    finally:
+        conn.close()
 
 
 def get_item(conn: sqlite3.Connection, item_id: str) -> dict:
@@ -86,7 +93,7 @@ def scan_queue(as_of: str) -> dict:
             if days is not None and days > 14:
                 continue
             packet = conn.execute("SELECT id,state FROM packets WHERE item_id=? AND item_revision=? ORDER BY created_at DESC LIMIT 1", (r["id"], r["revision"])).fetchone()
-            result.append({"id": r["id"], "client": r["client"], "request": r["request"], "source": r["source"], "due": r["due"], "days_until_due": days, "dependency": r["dependency"], "revision": r["revision"], "packet": dict(packet) if packet else None})
+            result.append({"id": r["id"], "client": r["client"], "request": r["request"], "source": r["source"], "due": r["due"], "calendar_days_until_due": days, "known_owner": r["owner"], "dependency": r["dependency"], "revision": r["revision"], "packet": dict(packet) if packet else None})
         result.sort(key=lambda r: (r["due"] is None, r["due"] or "", r["id"]))
         return {"fictional": True, "as_of": as_of, "count": len(result), "items": result}
 
@@ -105,6 +112,8 @@ def make_packet(item: dict, as_of: str) -> dict:
         "due_display": due_text,
         "known_owner": item["owner"],
         "open_dependency": item["dependency"],
+        "supporting_documents_checked": False,
+        "evidence_scope": "This packet contains the request and source clause. No search for delivery evidence or supporting files was performed. An open dependency does not establish that a file is absent.",
         "proposed_next_action": item["next_action"],
         "draft_work_product": item["draft_outline"],
         "model_draft": None,
@@ -162,6 +171,8 @@ def review_packet(packet_id: str, reviewer: str, decision: str, note: str) -> di
 def save_draft(packet_id: str, expected_item_revision: int, draft: str) -> dict:
     if not isinstance(draft, str) or len(draft.strip()) < 40 or len(draft) > 10000:
         raise ValueError("Draft must contain 40 to 10,000 characters.")
+    if len(draft.split()) > 180:
+        raise ValueError("Draft must contain at most 180 words. Shorten it before saving.")
     with connect() as conn:
         conn.execute("BEGIN IMMEDIATE")
         try:
@@ -175,14 +186,14 @@ def save_draft(packet_id: str, expected_item_revision: int, draft: str) -> dict:
             if body["model_draft"]:
                 if body["model_draft"] == draft.strip():
                     conn.commit()
-                    return {"packet_id": packet_id, "saved": False, "state": row["state"], "model_draft": body["model_draft"]}
+                    return {"packet_id": packet_id, "saved": False, "state": row["state"], "model_draft": body["model_draft"], "word_count": len(body["model_draft"].split())}
                 raise ValueError("A draft already exists. Human review is required before changing it.")
             body["model_draft"] = draft.strip()
             body["model_draft_status"] = "Unverified model draft for counsel review. No external message sent."
             conn.execute("UPDATE packets SET body=? WHERE id=?", (json.dumps(body), packet_id))
             conn.execute("INSERT INTO audit(at,action,item_id,packet_id,detail) VALUES (?,?,?,?,?)", (now(), "model_draft_saved", row["item_id"], packet_id, json.dumps({"characters": len(draft.strip())})))
             conn.commit()
-            return {"packet_id": packet_id, "saved": True, "state": row["state"], "model_draft": body["model_draft"], "external_message_sent": False}
+            return {"packet_id": packet_id, "saved": True, "state": row["state"], "model_draft": body["model_draft"], "word_count": len(body["model_draft"].split()), "external_message_sent": False}
         except Exception:
             conn.rollback()
             raise

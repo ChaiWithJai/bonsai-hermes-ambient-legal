@@ -1,0 +1,13 @@
+{
+  "gridfs_id": "6ab837cf20a5b67c2347c9ec",
+  "sha256": "3d2d54c2a662ab5e35c75dd55b0f1fe8bba32cd201fc72ae183a45ea0e61dc32",
+  "files": [
+    "evidence/connected-replay-v3-manifest.json",
+    "evidence/connected-replay-v3-review.json",
+    "evidence/connected-replay-v3-session.json",
+    "evidence/connected-replay-v3-usage-incomplete.json",
+    "evidence/connected-replay-v3-mlflow.json"
+  ],
+  "restored_files_verified": true,
+  "scope": "Selected run artifacts only, not full MLflow backup"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "trace_id": "tr-24185ee93f668e78129b0aa67a1a6023",
+    "state": "OK",
+    "tool": "save_draft",
+    "draft_words": 168
+  },
+  {
+    "trace_id": "tr-7984736ace857fffe0d3400eaa023f05",
+    "state": "ERROR",
+    "tool": "save_draft",
+    "draft_words": 181
+  },
+  {
+    "trace_id": "tr-06f5e2054747751634a84697f2cafb46",
+    "state": "ERROR",
+    "tool": "save_draft",
+    "draft_words": 197
+  },
+  {
+    "trace_id": "tr-f6aa612e16f5d8a42fefd2bd1eb733aa",
+    "state": "OK",
+    "tool": "prepare_packet",
+    "draft_words": null
+  },
+  {
+    "trace_id": "tr-08a3c26fc6602f16bf7f125178f80319",
+    "state": "OK",
+    "tool": "list_packets",
+    "draft_words": null
+  },
+  {
+    "trace_id": "tr-b63a381572799a4b970f41b016c1a157",
+    "state": "OK",
+    "tool": "scan_queue",
+    "draft_words": null
+  }
+]

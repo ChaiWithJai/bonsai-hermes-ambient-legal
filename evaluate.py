@@ -10,16 +10,16 @@ ROOT = Path(__file__).resolve().parent
 
 
 def evaluate():
-    seed = {r["id"]: r for r in json.loads((ROOT / "seed.json").read_text())["items"]}
     packets = ambient.list_packets()["packets"]
     drafts = [p for p in packets if p["model_draft"]]
     with ambient.connect() as conn:
         audit = [dict(row) for row in conn.execute("SELECT action,item_id,packet_id FROM audit ORDER BY seq")]
+        requests = {r["id"]: ambient.get_item(conn, r["id"]) for r in conn.execute("SELECT id FROM items")}
     result = {
         "scope": "Deterministic checks on the current local SQLite state and saved model drafts. Human legal review is not included.",
         "packets": len(packets),
         "model_drafts": len(drafts),
-        "source_fields_match_fixture": all(p["source"] == seed[p["item_id"]]["source"] and p["source_clause"] == seed[p["item_id"]]["clause"] for p in packets),
+        "source_fields_match_registered_request": all(p["source"] == requests[p["item_id"]]["source"] and p["source_clause"] == requests[p["item_id"]]["clause"] for p in packets) if packets else None,
         "saved_drafts_cite_source": sum(p["source"] in p["model_draft"] for p in drafts),
         "saved_drafts_awaiting_counsel": sum(p["state"] == "awaiting_counsel" for p in drafts),
         "unknown_acceptance_due_preserved": next((p["due"] is None for p in packets if p["item_id"] == "AMB-004"), None),
@@ -47,7 +47,7 @@ def main():
             mlflow.log_metrics({
                 "packets": result["packets"],
                 "model_drafts": result["model_drafts"],
-                "source_fields_match_fixture": int(result["source_fields_match_fixture"]),
+                "source_fields_match_registered_request": int(bool(result["source_fields_match_registered_request"])),
                 "saved_drafts_cite_source": result["saved_drafts_cite_source"],
                 "unknown_acceptance_due_preserved": int(bool(result["unknown_acceptance_due_preserved"])),
                 "amendment_record_points_to_v2": int(bool(result["amendment_record_points_to_v2"])),

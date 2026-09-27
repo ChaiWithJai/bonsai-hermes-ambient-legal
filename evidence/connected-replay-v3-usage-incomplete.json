@@ -1,0 +1,16 @@
+{
+  "session": "20260926_171738_4c1dae",
+  "status": "incomplete_request_accounting",
+  "logged_requests": 6,
+  "reported_calls": 7,
+  "cost_total_available": false,
+  "lines": [
+    "2026-09-26 17:17:59,672 INFO [20260926_171738_4c1dae] agent.conversation_loop: API call #1: model=bonsai-ui-public-ternary-bonsai2 provider=custom in=2910 out=213 total=3123 latency=20.0s id=chatcmpl-044CXlahkKnvxuoszoZNCnRxRcRNUlK2",
+    "2026-09-26 17:18:34,273 INFO [20260926_171738_4c1dae] agent.conversation_loop: API call #2: model=bonsai-ui-public-ternary-bonsai2 provider=custom in=6575 out=584 total=7159 latency=34.4s cache=2906/6575 (44%) id=chatcmpl-5oKdIDpSLzsxUfTqTeztpVQEm23lJRdg",
+    "2026-09-26 17:19:13,771 INFO [20260926_171738_4c1dae] agent.conversation_loop: API call #3: model=bonsai-ui-public-ternary-bonsai2 provider=custom in=7110 out=918 total=8028 latency=39.5s cache=6571/7110 (92%) id=chatcmpl-RdoBdbA9LSurSwBM0ow3lTzpEKLIAaFz",
+    "2026-09-26 17:19:53,304 INFO [20260926_171738_4c1dae] agent.conversation_loop: API call #4: model=bonsai-ui-public-ternary-bonsai2 provider=custom in=8038 out=884 total=8922 latency=39.5s cache=7106/8038 (88%) id=chatcmpl-GH6Ks0QhB1etIU7uIDO28aFOsj21QCdD",
+    "2026-09-26 17:20:16,903 INFO [20260926_171738_4c1dae] agent.conversation_loop: API call #5: model=bonsai-ui-public-ternary-bonsai2 provider=custom in=8520 out=533 total=9053 latency=23.6s cache=8034/8520 (94%) id=chatcmpl-JxPjmFGeQWfWsJcsWcEjp6K4FMIFMCMO",
+    "2026-09-26 17:22:24,481 INFO [20260926_171738_4c1dae] agent.conversation_loop: API call #6: model=bonsai-ui-public-ternary-bonsai2 provider=custom in=13228 out=1051 total=14279 latency=49.4s cache=12153/13228 (92%) id=chatcmpl-2go5VmvHuwgYs4kSDNYYrnMjk6JwymtW",
+    "2026-09-26 17:22:24,488 INFO [20260926_171738_4c1dae] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=bonsai-ui-public-ternary-bonsai2 api_calls=7/12 budget=7/12 tool_turns=5 last_msg_role=assistant response_len=5923 session=20260926_171738_4c1dae"
+  ]
+}

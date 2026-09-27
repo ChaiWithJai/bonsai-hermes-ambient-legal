@@ -1,0 +1,10 @@
+{
+  "session_id": "20260926_220016_532c20",
+  "draft_words": 168,
+  "word_limit": 180,
+  "human_review": "pending",
+  "workflow_complete": true,
+  "factual_limitation": "The final draft sentence says 'No deletion...occurred', which overstates absence of evidence. The controlling clause, deadline and request for counsel review are grounded; completion remains unverified.",
+  "receipt_limitation": "The final receipt is verbose and includes implementation-oriented status wording.",
+  "future_prompt_change": "Clarifies missing evidence versus event nonoccurrence and focuses clause, dependency and next action; no additional inference validation."
+}

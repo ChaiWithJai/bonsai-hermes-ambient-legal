@@ -1,0 +1,48 @@
+{
+  "packet": {
+    "fictional": true,
+    "item_id": "AMB-108",
+    "as_of": "2026-09-26",
+    "client": "Northstar Clinic Network",
+    "draft_subject": "Counsel review: Confirm site leads and backup contacts",
+    "source": "APL-008 revision 1, northstar-order-form.md section Section 2.1",
+    "source_clause": "A+ Active will provide the site schedule, accessibility plan and named escalation leads by October 1, 2026. Northstar will confirm room availability and participating staff separately.",
+    "due": "2026-10-01",
+    "due_display": "2026-10-01",
+    "known_owner": "Khizar",
+    "open_dependency": "Named leads and site schedule.",
+    "proposed_next_action": "Prepare a source-grounded follow-up for counsel to review against the current register.",
+    "draft_work_product": [
+      "State the obligation and cite its source section.",
+      "Identify the evidence needed before claiming completion.",
+      "Ask counsel to confirm responsibility and approve the proposed follow-up."
+    ],
+    "model_draft": "Counsel review \u2014 AMB-108 (as of 2026-09-26)\nClient: Northstar Clinic Network\nSource: APL-008 revision 1, northstar-order-form.md section Section 2.1\n\nSOURCE FACT: \"A+ Active will provide the site schedule, accessibility plan and named escalation leads by October 1, 2026. Northstar will confirm room availability and participating staff separately.\"\n\nKNOWN:\n- Obligation deadline: 2026-10-01 (5 calendar days remaining).\n- Recorded owner: Khizar (responsibility acceptance unverified).\n- Open dependency: named leads and site schedule.\n\nUNKNOWN:\n- The current site schedule and named escalation leads are not yet on file.\n- Whether Khizar has formally accepted the role.\n\nPROPOSED ACTION (not sent, not claimed complete):\n1. Assemble the site schedule, accessibility plan, and named escalation leads for counsel's review against the current register.\n2. Counsel confirms Khizar's responsibility and approves the follow-up.\n3. Only after approval, send the follow-up to Northstar.\n\nREQUEST FOR COUNSEL: confirm the owner and approve the proposed follow-up before 2026-10-01. No external message or completion assertion has been made by this draft.\n\nState: awaiting_counsel \u2014 unverified model draft.",
+    "model_draft_status": "Unverified model draft for counsel review. No external message sent.",
+    "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+    "packet_id": "AMB-108-r0",
+    "state": "awaiting_counsel",
+    "created_at": "2026-09-26T21:10:23.137640+00:00",
+    "reviewed_at": null,
+    "reviewer": null,
+    "decision": null
+  },
+  "review": {
+    "reviewer_kind": "agent",
+    "human_accepted": false,
+    "calendar_days_corrected": true,
+    "recorded_owner_corrected": true,
+    "remaining_findings": [
+      {
+        "span": "The current site schedule and named escalation leads are not yet on file.",
+        "finding": "The source identifies evidence needed but does not establish that the files are absent. The draft should say the evidence has not been verified."
+      },
+      {
+        "span": "saved a source-grounded draft of 141 words",
+        "finding": "The final response reports 141 words, but the saved draft has 168 whitespace-delimited words. Word counts should be computed by the tool rather than asserted by the model."
+      }
+    ],
+    "scope": "Single development replay using the same imported request; combined tool-schema and instruction change, not held-out validation.",
+    "draft_word_count_whitespace": 168
+  }
+}
