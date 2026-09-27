@@ -1,0 +1,25 @@
+{
+  "fictional": true,
+  "item_id": "AMB-003",
+  "as_of": "2026-09-26",
+  "client": "Aster Clinical AI (fictional)",
+  "draft_subject": "Counsel review: Check the deletion evidence for September 22 workshop recordings.",
+  "source": "Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4",
+  "source_clause": "Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 \u00a74.4. Retain a deletion confirmation, not the recording itself.",
+  "due": "2026-10-06",
+  "due_display": "2026-10-06",
+  "known_owner": null,
+  "open_dependency": "Deletion confirmation has not been provided.",
+  "proposed_next_action": "Prepare an evidence request for human approval; do not claim deletion occurred.",
+  "draft_work_product": [
+    "Request written confirmation of deletion by October 6, 2026",
+    "Reference the signed amendment as the controlling source",
+    "Retain confirmation only; do not retain the recording",
+    "Deletion status: unverified"
+  ],
+  "model_draft": "Counsel review \u2014 AMB-003 (as of 2026-09-26)\nClient: Aster Clinical AI (fictional)\nSource: Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4\n\nSOURCE FACT (Aster amendment v2 \u00a71): \"Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 \u00a74.4. Retain a deletion confirmation, not the recording itself.\"\n\nKNOWN:\n- Signed amendment v2 \u00a71 is controlling; MSA v1 \u00a74.4 is superseded.\n- Deletion deadline: 2026-10-06 (10 calendar days from review date).\n- Retain a deletion confirmation, not the recording.\n\nUNKNOWN:\n- Deletion is unverified; confirmation has not been provided. No deletion evidence is recorded. Do not state recordings were deleted.\n\nPROPOSED ACTION:\n1. Prepare an evidence request for counsel approval: written deletion confirmation for the September 22, 2026 recordings by 2026-10-06.\n2. Cite the signed amendment; retain confirmation only.\n\nREQUEST FOR COUNSEL: Approve the evidence request and confirm an owner before any external message.\n\nState: awaiting_counsel \u2014 unverified model draft. No deletion, delivery, assignment, or approval occurred.",
+  "model_draft_status": "Unverified model draft for counsel review. No external message sent.",
+  "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+  "packet_id": "AMB-003-r0",
+  "state": "awaiting_counsel"
+}

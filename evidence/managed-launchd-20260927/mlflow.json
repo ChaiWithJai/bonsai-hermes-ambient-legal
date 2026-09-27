@@ -1,0 +1,13 @@
+{
+  "experiment_id": "43",
+  "run_id": "91b402e1c7ff4266a3784205adcd68db",
+  "native_tool_traces": [
+    "tr-24185ee93f668e78129b0aa67a1a6023",
+    "tr-7984736ace857fffe0d3400eaa023f05",
+    "tr-06f5e2054747751634a84697f2cafb46",
+    "tr-f6aa612e16f5d8a42fefd2bd1eb733aa",
+    "tr-08a3c26fc6602f16bf7f125178f80319",
+    "tr-b63a381572799a4b970f41b016c1a157"
+  ],
+  "scope": "Artifact integration run with links to native tool spans; model calls remain HTTP captures"
+}

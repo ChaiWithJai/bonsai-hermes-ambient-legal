@@ -1,0 +1,14 @@
+{
+  "queue_job": "ambient-legal-scheduled-0b9c4b49432c47f5ac5dfb2f68e93af0",
+  "trigger": "LaunchAgent RunAtLoad with actual local date",
+  "files": {
+    "managed_tick.py": "c949ba2bcd66a57b1a674c7e1c92c8284c6ca200033e7c6a7360259f85bf9ce2",
+    "run_review.py": "eefde68953cdaa8c1b79fa3566ebd7e8fbc77b5a6fcf9cd2de9a9fd0758cf711",
+    "ambient.py": "111fe0360f5f2c2a11021eea718a8af6750796ca62f5c712908560b24db0cd68",
+    "start_model.sh": "5990a7f4aff829d3e8c7868ac8974fe16e2996a22c9c149f5329b11382c10967",
+    "config/sampling.json": "11cd11444d840b57bc14ad3ac95c2e0fe81e82575686c0b1ff36cff3a4164ec0"
+  },
+  "used_SOUL_sha256": "862a7b2611836d3c2c15cd3eda651d0ab82a4627b3b8592509ed8855dbb4a5fe",
+  "future_SOUL_sha256": "4c29fae6d1d5119f13627ce4b1c3d93daa6feb4224f65394cd360b30a2d0d3e5",
+  "future_prompt_change_tested_with_inference": false
+}

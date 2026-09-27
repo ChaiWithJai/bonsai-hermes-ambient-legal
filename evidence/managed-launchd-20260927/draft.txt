@@ -1,0 +1,21 @@
+Counsel review — AMB-003 (as of 2026-09-26)
+Client: Aster Clinical AI (fictional)
+Source: Aster amendment v2 §1, replacing MSA v1 §4.4
+
+SOURCE FACT (Aster amendment v2 §1): "Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 §4.4. Retain a deletion confirmation, not the recording itself."
+
+KNOWN:
+- Signed amendment v2 §1 is controlling; MSA v1 §4.4 is superseded.
+- Deletion deadline: 2026-10-06 (10 calendar days from review date).
+- Retain a deletion confirmation, not the recording.
+
+UNKNOWN:
+- Deletion is unverified; confirmation has not been provided. No deletion evidence is recorded. Do not state recordings were deleted.
+
+PROPOSED ACTION:
+1. Prepare an evidence request for counsel approval: written deletion confirmation for the September 22, 2026 recordings by 2026-10-06.
+2. Cite the signed amendment; retain confirmation only.
+
+REQUEST FOR COUNSEL: Approve the evidence request and confirm an owner before any external message.
+
+State: awaiting_counsel — unverified model draft. No deletion, delivery, assignment, or approval occurred.

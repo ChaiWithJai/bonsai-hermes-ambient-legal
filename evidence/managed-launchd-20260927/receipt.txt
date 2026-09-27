@@ -1,0 +1,11 @@
+Done. Packet AMB-003-r0 now carries the model draft (word_count 168, ≤180).
+
+Receipt
+- Saved packet: AMB-003-r0 (client Aster Clinical AI, fictional), as of 2026-09-26.
+- Source clause cited: Aster amendment v2 §1, replacing MSA v1 §4.4.
+- Saved draft: 168 words, state awaiting_counsel. No external message sent; no deletion, delivery, assignment, or approval claimed.
+
+Decision needed from counsel:
+Approve the evidence request (written deletion confirmation for the September 22, 2026 recordings, due 2026-10-06) and confirm an owner before any external message. The deletion itself remains unverified — counsel records the decision via `ambient.py review` after inspecting the packet.
+
+One item in this run only; no other packets were prepared or saved.

@@ -1,0 +1,12 @@
+{
+  "canonical_managed_service_installed": true,
+  "temporary_job_unloaded": true,
+  "legacy_proxy_unloaded_with_backup": true,
+  "legacy_cron_paused": "943ea819227b",
+  "prior_requests_unchanged": true,
+  "other_packets_including_AMB108_unchanged": true,
+  "owned_services_stopped": true,
+  "start_interval_seconds": 300,
+  "reboot_tested": false,
+  "requires_logged_in_awake_mac": true
+}
