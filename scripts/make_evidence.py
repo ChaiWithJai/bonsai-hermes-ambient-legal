@@ -1,11 +1,13 @@
 """Create clearly labeled deterministic evidence without a model or credentials."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import json
 import tempfile
-from pathlib import Path
 
 import ambient
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 with tempfile.TemporaryDirectory() as directory:
     ambient.DB = Path(directory) / "ambient.sqlite"
     before = ambient.scan_queue("2026-09-26")
