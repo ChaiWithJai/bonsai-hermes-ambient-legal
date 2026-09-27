@@ -1,5 +1,15 @@
 # From incoming request to counsel's decision
 
+```mermaid
+flowchart LR
+    Requests[Client requests and agreement clauses] --> Queue[Local request queue]
+    Timer[Scheduled check] --> Worker[Prepare one pending request]
+    Queue --> Worker
+    Worker --> Hermes[Hermes and local Bonsai]
+    Hermes --> Packet[Saved draft with source and dependency]
+    Packet --> Counsel[Counsel review]
+```
+
 The application stores incoming requests and prepared packets in SQLite. Each request carries its agreement clause and dependency information. CLI submission and the Google intake importer write into the same queue configured by `AMBIENT_DB`.
 
 A scheduled check selects one eligible request, nearest due first. The managed worker starts its model server and sampling proxy, waits for readiness, and invokes the isolated Hermes profile. Hermes exposes tools for queue scanning, packet preparation, draft saving and readback. Bonsai reads the tool results and proposes the draft.
@@ -22,3 +32,7 @@ Counsel reads the packet and records a decision through the review command. The 
 Set one absolute database path for the CLI and profile before installation. An existing listener or occupied GPU reservation leaves a managed pass waiting instead of replacing another service. The Mac must remain awake and logged in. The service processes supplied requests; automatic Drive folder watching and source refresh are separate integration work.
 
 See [setup](setup.md), [Google intake](connected-intake.md) and [managed operation](managed-service.md) for commands and inspection steps.
+
+## Design choice
+
+Preparing a request manually means finding the current clause and establishing what information is missing before drafting a response. The scheduled workflow preserves that preparation beside the request. A rules-only queue is enough to sort dates; the model is used to explain the obligation and propose a follow-up. Keeping review decisions outside its tools gives counsel a clear point to exercise judgment.

@@ -1,9 +1,10 @@
 """Create clearly labeled deterministic evidence without a model or credentials."""
 import sys
-from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import json
 import tempfile
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import ambient
 
