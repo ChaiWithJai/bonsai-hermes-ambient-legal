@@ -52,6 +52,8 @@ Run `python3 evaluate.py --out evidence/evaluation.json` to check saved packet f
 
 ## Schedule the handoff
 
+For automatic model startup and cleanup, use the [managed service guide](docs/managed-service.md). It processes one pending packet per five-minute check and reserves the GPU on a shared lab machine. The older Hermes cron mode below still requires an independently available model.
+
 After the profile and model work in a manual run, `sh install_schedule.sh` creates a Hermes cron job at 7 a.m. on weekdays. Hermes injects the current America/New_York date from the profile's `scripts/ambient_date.py`. The job scans the queue and works on one item per run, nearest due first, so the draft fits the local response budget. Its report remains local. It does not notify counsel or clients. Check `hermes --profile ambient-legal-demo cron list` and `hermes --profile ambient-legal-demo cron runs <job-id>` for durable execution results. The Mac, Hermes scheduler, proxy, and model must remain available. To make work visible in Slack, configure a separate Hermes Slack app and delivery target under your own credentials; this repository does not install one.
 
 The recorded scheduled runs produced local drafts awaiting counsel. The [verification record](evidence/live-verification.md) includes MLflow tool traces and model HTTP captures. Arbitrary agreement ingestion, connected intake, counsel approval and continuous service availability remain unverified.

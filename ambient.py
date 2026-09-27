@@ -171,6 +171,8 @@ def review_packet(packet_id: str, reviewer: str, decision: str, note: str) -> di
 def save_draft(packet_id: str, expected_item_revision: int, draft: str) -> dict:
     if not isinstance(draft, str) or len(draft.strip()) < 40 or len(draft) > 10000:
         raise ValueError("Draft must contain 40 to 10,000 characters.")
+    if len(draft.split()) > 180:
+        raise ValueError("Draft must contain at most 180 words. Shorten it before saving.")
     with connect() as conn:
         conn.execute("BEGIN IMMEDIATE")
         try:
