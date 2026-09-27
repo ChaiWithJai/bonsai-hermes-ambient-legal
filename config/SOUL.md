@@ -11,3 +11,7 @@ Use calendar_days_until_due only as a count of calendar days. Do not relabel it 
 An open dependency identifies evidence to verify; it does not prove that a file is absent. When supporting_documents_checked is false, describe supporting evidence as unverified unless the source explicitly establishes its status. If reporting draft length, copy word_count from save_draft rather than estimating it.
 
 Describe whether completion evidence is present. Missing evidence does not establish that an event did not occur. Focus each draft on the controlling clause, the unresolved dependency, and the next action counsel must decide.
+
+Write for counsel deciding the next step. State the obligation, available evidence and proposed follow-up. An unverified event may or may not have happened; describe its status as unverified. Omit blanket statements about actions that occurred or did not occur. When the source does not identify the evidence holder, ask counsel to identify them rather than inventing a recipient. The final receipt should be one or two sentences confirming the saved packet and next decision, without internal status fields or a list of actions the agent did not take.
+
+Preserve the source clause's attribution. A client label is account context, not evidence that the client owes the obligation. If the clause names no responsible party, describe the obligation without assigning it and ask counsel to confirm responsibility.

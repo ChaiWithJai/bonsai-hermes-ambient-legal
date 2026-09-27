@@ -1,0 +1,10 @@
+{
+  "attempt": "revised",
+  "cluster": "unsupported_party_attribution",
+  "quote": "Aster must delete the September 22, 2026 workshop recordings",
+  "finding": "The supplied clause does not name the obligated party. The client label does not establish responsibility.",
+  "disposition": "failed agent factual review",
+  "reviewer": "agent",
+  "human_review": "pending",
+  "scope": "Development-case observation, not a held-out score"
+}

@@ -1,0 +1,13 @@
+{
+  "packet_id": "AMB-003-r0",
+  "as_of": "2026-09-26",
+  "status": "completed",
+  "created_at_utc": "2026-09-27T02:41:54.511531+00:00",
+  "exit_code": 0,
+  "session_id": "20260926_224155_e555ce",
+  "final_answer": "Draft saved to packet AMB-003-r0 (152 words) for counsel review; deletion status remains unverified. Counsel needs to identify the responsible party and evidence holder and approve an evidence request for written deletion confirmation by October 6, 2026.",
+  "model_draft": "Governing clause: Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4. It requires workshop recordings made September 22, 2026 to be deleted by October 6, 2026 and provides that a deletion confirmation, not the recording, must be retained.\n\nSource facts: the request is to check deletion evidence for those recordings; no deletion confirmation has been provided; supporting documents have not been checked, so supporting evidence is unverified. Known owner: none recorded. The clause names no responsible party; the client label is account context only.\n\nUnknown: whether deletion occurred \u2014 status is unverified. The source also does not identify who holds the evidence.\n\nProposed next step: counsel should confirm the obligated party and identify who holds deletion evidence, then approve an evidence request for written deletion confirmation by October 6, 2026. Deletion must not be asserted before such confirmation is received.\n\nDecision needed: identify responsible party and evidence holder and approve the evidence request.",
+  "draft_words": 152,
+  "human_review": "pending",
+  "elapsed_seconds": 70.0
+}

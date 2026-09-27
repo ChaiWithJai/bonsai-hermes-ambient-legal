@@ -1,0 +1,15 @@
+{
+  "reviewer": "agent",
+  "human_review": "pending",
+  "scope": "One development-case replay",
+  "checks": {
+    "deadline_matches_source": true,
+    "amendment_precedence_preserved": true,
+    "completion_status_unverified": true,
+    "responsible_party_not_inferred_from_client": true,
+    "evidence_holder_left_for_counsel": true,
+    "durable_saved_draft": true,
+    "receipt_sentences": 2
+  },
+  "disposition": "Passed the targeted agent factual review; broader legal quality remains for counsel."
+}

@@ -1,0 +1,7 @@
+Receipt
+
+Saved packet: AMB-003-r0 (AMB-003, revision 0, Aster Clinical AI)
+Draft word count (from save_draft): 158
+State: awaiting_counsel; external_message_sent: false
+
+Decision counsel needs to make: approve a written evidence request to Aster Clinical AI for deletion confirmation dated no later than October 6, 2026 (per the signed amendment v2 section 1), and decide whether an owner should be assigned to follow up. No owner has been assigned, and no deletion, delivery, assignment, or approval has occurred.

@@ -1,0 +1,13 @@
+{
+  "packet_id": "AMB-003-r0",
+  "as_of": "2026-09-26",
+  "status": "completed",
+  "created_at_utc": "2026-09-27T02:38:04.830583+00:00",
+  "exit_code": 0,
+  "session_id": "20260926_223806_4209a4",
+  "final_answer": "Draft saved for AMB-003 revision 0 (149 words), awaiting counsel. Counsel's decision: whether to issue a written deletion-confirmation request before the October 6 deadline, and to identify the owner or contact holding the deletion evidence.",
+  "model_draft": "Source clause: Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4: \"Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 \u00a74.4. Retain a deletion confirmation, not the recording itself.\"\n\nObligation: Aster must delete the September 22, 2026 workshop recordings by October 6, 2026 and retain a deletion confirmation instead of the recording. Amendment v2 \u00a71 controls.\n\nEvidence: No deletion confirmation has been provided; supporting documents are unverified. Deletion status is unverified. The open dependency does not establish that a recording is absent.\n\nProposed next step: Counsel should decide whether to issue a written deletion-confirmation request before the October 6 deadline. The source does not identify who holds the evidence, so counsel should identify the appropriate owner or contact before any request is drafted. Counsel approval is required before any external communication or completion claim is made.",
+  "draft_words": 149,
+  "human_review": "pending",
+  "elapsed_seconds": 134.96
+}

@@ -21,11 +21,16 @@ def run_review(item, as_of, profile, runs):
             return {'status': 'already_running', 'packet_id': key}
         prompt = (f"Review date: {as_of}. Prepare only item {item['id']} revision {item['revision']}. "
                   "Scan the queue and read existing packets, then prepare the selected packet if needed. "
-                  "Read its exact source clause, write and save one draft of at most180 words for counsel. "
-                  "Distinguish source facts, unknown evidence and proposed action. Do not claim that "
-                  "a deletion, delivery, assignment or approval occurred. Finish with a short receipt "
-                  "identifying the saved packet and the decision counsel needs to make.")
-        prompt = prompt.replace('most180', 'most 180')
+                  "Read its exact source clause, write and save one draft of at most 180 words for counsel. "
+                  "State the governing obligation, evidence available, and proposed next step. "
+                  "Preserve the clause's attribution: the client label does not identify the obligated party. "
+                  "If the clause names no responsible party, describe the obligation without assigning it "
+                  "and ask counsel to confirm responsibility. "
+                  "An unverified event may or may not have happened: report only that its status is unverified. "
+                  "Do not add a blanket statement that actions occurred or did not occur. "
+                  "If the source does not identify who holds the evidence, ask counsel to identify that person "
+                  "instead of inventing a recipient. Finish in one or two sentences confirming the saved "
+                  "packet and the decision counsel needs to make; leave internal status fields out of the receipt.")
         database = Path.home() / '.hermes/profiles' / profile / 'state.db'
         before = cursor(database)
         stamp = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')

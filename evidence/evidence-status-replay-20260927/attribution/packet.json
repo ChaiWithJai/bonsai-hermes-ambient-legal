@@ -1,0 +1,37 @@
+{
+  "fictional": true,
+  "count": 1,
+  "packets": [
+    {
+      "fictional": true,
+      "item_id": "AMB-003",
+      "as_of": "2026-09-26",
+      "client": "Aster Clinical AI (fictional)",
+      "draft_subject": "Counsel review: Check the deletion evidence for September 22 workshop recordings.",
+      "source": "Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4",
+      "source_clause": "Workshop recordings made September 22, 2026 must be deleted by October 6, 2026. This amendment replaces the 30-day retention period in MSA v1 \u00a74.4. Retain a deletion confirmation, not the recording itself.",
+      "due": "2026-10-06",
+      "due_display": "2026-10-06",
+      "known_owner": null,
+      "open_dependency": "Deletion confirmation has not been provided.",
+      "supporting_documents_checked": false,
+      "evidence_scope": "This packet contains the request and source clause. No search for delivery evidence or supporting files was performed. An open dependency does not establish that a file is absent.",
+      "proposed_next_action": "Prepare an evidence request for human approval; do not claim deletion occurred.",
+      "draft_work_product": [
+        "Request written confirmation of deletion by October 6, 2026",
+        "Reference the signed amendment as the controlling source",
+        "Retain confirmation only; do not retain the recording",
+        "Deletion status: unverified"
+      ],
+      "model_draft": "Governing clause: Aster amendment v2 \u00a71, replacing MSA v1 \u00a74.4. It requires workshop recordings made September 22, 2026 to be deleted by October 6, 2026 and provides that a deletion confirmation, not the recording, must be retained.\n\nSource facts: the request is to check deletion evidence for those recordings; no deletion confirmation has been provided; supporting documents have not been checked, so supporting evidence is unverified. Known owner: none recorded. The clause names no responsible party; the client label is account context only.\n\nUnknown: whether deletion occurred \u2014 status is unverified. The source also does not identify who holds the evidence.\n\nProposed next step: counsel should confirm the obligated party and identify who holds deletion evidence, then approve an evidence request for written deletion confirmation by October 6, 2026. Deletion must not be asserted before such confirmation is received.\n\nDecision needed: identify responsible party and evidence holder and approve the evidence request.",
+      "model_draft_status": "Unverified model draft for counsel review. No external message sent.",
+      "approval_needed": "Counsel must approve any assignment, external communication, or assertion of completion.",
+      "packet_id": "AMB-003-r0",
+      "state": "awaiting_counsel",
+      "created_at": "2026-09-27T02:42:21.168623+00:00",
+      "reviewed_at": null,
+      "reviewer": null,
+      "decision": null
+    }
+  ]
+}
