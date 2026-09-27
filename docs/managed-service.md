@@ -39,3 +39,5 @@ tail -n 20 "$HOME/Library/Logs/PrismML/ambient-legal.out.log"
 ```
 
 Stop the service with `launchctl bootout gui/$(id -u)/com.prismml.bonsai-ambient-legal`. The Mac must stay awake and the user must remain logged in. The service does not refresh agreements, send messages or change ownership. A reboot recovery claim requires a separate test.
+
+Stopping a worker sends SIGTERM to the Hermes process group it owns and waits for cleanup before releasing the packet lock. The attempt is recorded as `interrupted` if review verification did not finish. A later check inspects the saved packet before retrying, so an existing draft is not overwritten simply because the worker stopped. Process tests cover child cleanup; reboot recovery remains unverified.

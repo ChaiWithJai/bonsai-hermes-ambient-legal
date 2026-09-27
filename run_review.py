@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 import ambient
 from lib.hermes_result import cursor, final_answer
+from lib.owned_process import run as run_owned
 
 
 def run_review(item, as_of, profile, runs):
@@ -39,8 +40,8 @@ def run_review(item, as_of, profile, runs):
         destination.write_text(json.dumps(result, indent=2) + '\n')
         started = time.monotonic()
         try:
-            proc = subprocess.run(['hermes', '--profile', profile, 'chat', '--oneshot', '-Q', '--run-budget', '480', '-q', prompt],
-                                  capture_output=True, text=True, timeout=540, env=os.environ.copy())
+            proc = run_owned(['hermes', '--profile', profile, 'chat', '--oneshot', '-Q', '--run-budget', '480', '-q', prompt],
+                                  timeout=540, env=os.environ.copy())
             destination.with_suffix('.stdout.log').write_text(proc.stdout)
             destination.with_suffix('.stderr.log').write_text(proc.stderr)
             result['exit_code'] = proc.returncode
@@ -54,6 +55,9 @@ def run_review(item, as_of, profile, runs):
                 raise ValueError('Saved draft exceeds the requested 180 words')
             result.update(status='completed', session_id=session, final_answer=answer,
                           model_draft=packet['model_draft'], draft_words=len(packet['model_draft'].split()), human_review='pending')
+        except KeyboardInterrupt:
+            result.update(status='interrupted', error='Worker interrupted before review verification')
+            raise
         except (ValueError, OSError, sqlite3.Error, subprocess.TimeoutExpired) as error:
             result.update(status='failed', error=str(error))
         finally:
