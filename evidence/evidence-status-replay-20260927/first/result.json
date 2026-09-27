@@ -1,0 +1,13 @@
+{
+  "packet_id": "AMB-003-r0",
+  "as_of": "2026-09-26",
+  "status": "completed",
+  "created_at_utc": "2026-09-27T02:34:37.452061+00:00",
+  "exit_code": 0,
+  "session_id": "20260926_223438_fcd03d",
+  "final_answer": "Receipt\n\nSaved packet: AMB-003-r0 (AMB-003, revision 0, Aster Clinical AI)\nDraft word count (from save_draft): 158\nState: awaiting_counsel; external_message_sent: false\n\nDecision counsel needs to make: approve a written evidence request to Aster Clinical AI for deletion confirmation dated no later than October 6, 2026 (per the signed amendment v2 section 1), and decide whether an owner should be assigned to follow up. No owner has been assigned, and no deletion, delivery, assignment, or approval has occurred.",
+  "model_draft": "Counsel review draft, Aster Clinical AI, item AMB-003 r0, packet AMB-003-r0.\n\nSource facts: The client asks for deletion evidence for the September 22, 2026 workshop recordings. The signed source is Aster amendment v2 section 1, which replaces MSA v1 section 4.4. It requires the September 22, 2026 recordings to be deleted by October 6, 2026, replaces the 30-day retention period in MSA v1 section 4.4, and requires retaining a deletion confirmation, not the recording itself.\n\nUnknown evidence: Deletion confirmation has not been provided. Supporting documents were not checked, so deletion status is unverified. The open dependency identifies evidence to verify; it does not prove the recordings are retained or already deleted. No deletion, delivery, assignment, or approval has occurred.\n\nProposed action for counsel: Decide whether to approve a written evidence request to Aster Clinical AI for deletion confirmation dated no later than October 6, 2026, and whether to assign an owner for follow-up. No owner has been assigned.",
+  "draft_words": 158,
+  "human_review": "pending",
+  "elapsed_seconds": 102.23
+}

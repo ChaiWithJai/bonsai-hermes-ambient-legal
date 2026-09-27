@@ -1,0 +1,22 @@
+{
+  "created_at": "2026-09-27T02:33:32.101210+00:00",
+  "profile": "legal-evidence-status-20260927",
+  "source_sha256": "125224c18ccf853aa2743bed943ff64e4dec4d7d53f0b284376aa5e2d6047d95",
+  "model_sha256": "3907dc1658db1f78a9826bf8d5bcb8dc65db0d466388937af57f2294fae62ec1",
+  "runtime_sha256": "1ad69ebaada923760c52c1dc50daf198a22c2adb4a9dcccd25779fa7079f353b",
+  "soul_sha256": "4c29fae6d1d5119f13627ce4b1c3d93daa6feb4224f65394cd360b30a2d0d3e5",
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.05,
+    "presence_penalty": 0.0,
+    "repeat_penalty": 1.0,
+    "chat_template_kwargs": {
+      "enable_thinking": true,
+      "reasoning_effort": "medium"
+    }
+  },
+  "revision": "7477368b561f2124b479800e2027f4b8949a5394",
+  "scope": "Replay of the same AMB-003 source with corrected evidence-status instructions; only this request is present in a new isolated queue."
+}

@@ -23,7 +23,7 @@ The [llama.cpp server reference](https://github.com/ggml-org/llama.cpp/tree/mast
 
 ## What was observed
 
-The scheduled retention request saved a 168-word draft after the tool rejected drafts of 197 and 181 words. The 180-word rule therefore added calls in that run. It is an application constraint, separate from the proxy's 1,536-token response cap and the profile's twelve-turn limit. See [the scheduled run](../evidence/managed-launchd-20260927/README.md).
+The scheduled retention request saved a 168-word draft after the tool rejected drafts of 197 and 181 words. The 180-word rule therefore added calls in that run. It is an application constraint, separate from the proxy's 1,536-token response cap and the profile's twelve-turn limit. See [the scheduled run](../evidence/managed-launchd-20260927/README.md). A later [evidence-status replay](../evidence/evidence-status-replay-20260927/README.md) corrected unsupported completion and party claims through instruction changes, with all failed attempts preserved.
 
 The [configuration capture](recorded-configuration.md) provides the installed profile fields and available request settings. It is a reference view generated from those records. The current evidence supports reproducing the configuration; it does not establish a domain-specific fine-tune or a best setting across competing configurations.
 

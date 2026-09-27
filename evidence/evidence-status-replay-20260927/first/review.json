@@ -1,0 +1,10 @@
+{
+  "attempt": "first",
+  "cluster": "unsupported_completion_status",
+  "quote": "No deletion, delivery, assignment, or approval has occurred.",
+  "finding": "The source establishes missing confirmation, not whether the underlying actions occurred.",
+  "disposition": "failed agent factual review",
+  "reviewer": "agent",
+  "human_review": "pending",
+  "scope": "Development-case observation, not a held-out score"
+}
