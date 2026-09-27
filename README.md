@@ -4,13 +4,13 @@ Prepare the governing clause, missing information and a proposed follow-up befor
 
 ## How it works
 
-A scheduled worker takes one pending request, starts local Bonsai inference and asks Hermes to prepare a draft. The application saves the packet and stops the model services it started. See the [architecture](docs/architecture.md) for data flow, persistence and failure handling.
+A scheduled worker asks Hermes and local Bonsai to prepare one pending request. It saves the source clause and draft together, then stops the model services it started.
 
-The [recorded scheduled run](evidence/managed-launchd-20260927/README.md) saved a 168-word retention draft citing the controlling amendment and October 6 deadline.
+The [reviewed retention draft](evidence/evidence-status-replay-20260927/README.md) asks counsel to identify the responsible party and obtain deletion evidence by October 6.
 
 ## Get started
 
-The example uses sample agreements and requests. With Python 3.10 or newer, run the sample queue. The first tick creates four packets; repeating it creates no duplicates. [Setup](docs/setup.md) adds model drafts, and [scheduling](docs/managed-service.md) enables automatic preparation.
+With Python 3.10 or newer, process the sample requests. The first run creates four review packets; repeating it creates no duplicates.
 
 ```sh
 git clone https://github.com/ChaiWithJai/bonsai-hermes-ambient-legal.git
@@ -25,8 +25,10 @@ python3 ambient.py packets
 
 | Resource | Use it to |
 | --- | --- |
-| [Setup](docs/setup.md) | Run the agent and connect its inputs. |
-| [Model parameters](docs/parameter-guide.md) | Understand the settings, evidence and tuning tradeoffs. |
-| [Configuration capture](docs/recorded-configuration.md) | Inspect the recorded model and Hermes settings. |
+| [Setup](docs/setup.md) | Configure Bonsai and Hermes. |
+| [Scheduling](docs/managed-service.md) | Install and operate the scheduled worker. |
+| [Architecture](docs/architecture.md) | Follow the tools, records and failure handling. |
+| [Model parameters](docs/parameter-guide.md) | Choose settings and inspect the supporting measurements. |
+| [Configuration capture](docs/recorded-configuration.md) | See the model and Hermes settings used in the recorded run. |
 | [Google intake](docs/connected-intake.md) | Import a commitment and its agreement. |
 | [Development](docs/development.md) | Find the implementation and run its tests. |
