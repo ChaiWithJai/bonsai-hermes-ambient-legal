@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-09-27T02:06:49.867307+00:00",
+  "scope": "Installed profile captured after the recorded runs; not an immutable at-run snapshot. Credentials, paths and tool environment omitted.",
+  "profile": "ambient-legal-managed-20260927",
+  "profile_file_sha256": "338bb21dc3dd676c649d23e0e8cfeefa1fa9a9be8bce6ae4968d076c62278b33",
+  "model": {
+    "default": "bonsai-ui-public-ternary-bonsai2",
+    "provider": "custom",
+    "base_url": "http://127.0.0.1:5262/v1",
+    "api_mode": "chat_completions",
+    "streaming": false,
+    "context_length": 65536
+  },
+  "agent": {
+    "max_turns": 12,
+    "reasoning_effort": "medium"
+  },
+  "mcp_server_names": [
+    "ambient_legal"
+  ]
+}

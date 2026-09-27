@@ -59,3 +59,7 @@ After the profile and model work in a manual run, `sh install_schedule.sh` creat
 The [managed lifecycle run](evidence/managed-launchd-20260927/README.md) started local inference from launchd, saved a 168-word draft for an existing request, and stopped its owned services. The record includes six native MLflow tool traces and the two drafts rejected by the word limit. Counsel review remains pending; the preserved draft and its identified wording issue are available for inspection.
 
 Agent configuration lives in `config/`, sample requests in `fixtures/`, and regression tests in `tests/`. Intake and evidence-export utilities live in `scripts/`. The root commands remain the entry points for queue operations, profile setup and service startup.
+
+## Inspect the installed configuration
+
+The [configuration screenshot and source record](docs/recorded-configuration.md) show the installed managed profile, including its model endpoint and legal tool server. Compare them with the setup template before starting the service.
